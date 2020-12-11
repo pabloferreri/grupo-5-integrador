@@ -1,4 +1,4 @@
-Pagina de E-Comerce Gamers-ON
+Pagina de E-Comerce GamerZone
 
 ¿Qué productos o servicios brindará nuestro sitio?
 Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.
