@@ -29,3 +29,9 @@ Paleta de Colores
 
 2F2BFF
 2CFCD6
+
+
+Tipografias
+
+- Roboto
+- Rubik One
