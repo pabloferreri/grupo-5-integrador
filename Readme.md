@@ -19,6 +19,13 @@ Felipe Berraz:
 Facundo Rubio: 24 años. Es analista en sistemas. Actualmente se desarrolla como QA y Backend Developer. En sus tiempos libres le gusta jugar a los video juegos y salir de viajes.
 
 Paginas de Referencia 
-- https://compragamer.com
-- https://www.venex.com.ar/pagina-inicial.htm
-- https://www.rakuten.es/
+- https://compragamer.com Apuntamos a los mismos productos y misma clientela.
+- https://www.venex.com.ar/pagina-inicial.htm Apuntamos a los mismos productos y misma clientela.
+- https://www.rakuten.es/ Nos gusto el diseño del home y de los botones de ver mas.
+- https://es.aliexpress.com/ nso inspiramos en los botos de acceso rapido y la pagiana de registro.
+- https://www.logitechg.com/ El logo fue diseñado a partir de serie G de los mouse de Logitech par gamers.
+
+Paleta de Colores 
+
+2F2BFF
+2CFCD6
