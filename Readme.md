@@ -1,9 +1,11 @@
 Pagina de E-Comerce GamerZone
 
 ¿Qué productos o servicios brindará nuestro sitio?
+
 Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.
 
 ¿Quién será nuestra audiencia objetivo?
+
 Nuestra audiencia objetivo son los gamers y toda persona que necesite una computadora de buen rendimiento como por ej diseñadores graficos o animadores.
 
 Equipo de trabajo: 
