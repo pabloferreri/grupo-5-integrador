@@ -28,6 +28,7 @@ Paginas de Referencia
 Paleta de Colores 
 
 2F2BFF
+
 2CFCD6
 
 
