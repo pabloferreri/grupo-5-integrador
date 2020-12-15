@@ -14,7 +14,7 @@ Nuestro equipo esta conformado por:
 
 Pablo Ferreri: 29 años. Es estudiante de programacion que esta ganando experiencia en el rubro. En sus tiempos libre le gusta juntarse con amigos, andar en bicicleta y viajar cuando se puede.
 
-Felipe Berraz: 
+Felipe Berraz: 18 años. Es estudiante de programación en Digital House y comenzará a cursar Negocios Digitales en 2021. En sus tiempos libres le gusta jugar al fútbol con amigos y jugar tenis.
 
 Facundo Rubio: 24 años. Es analista en sistemas. Actualmente se desarrolla como QA y Backend Developer. En sus tiempos libres le gusta jugar a los video juegos y salir de viajes.
 
