@@ -36,3 +36,12 @@ Tipografias
 
 - Roboto
 - Rubik One
+
+Figma
+
+Carrito de Compras
+
+https://www.figma.com/file/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=0%3A1
+
+Home y registro a la pagina
+https://www.figma.com/file/1ok5iear4A0RGvgDzn5tTs/GameZone
