@@ -45,4 +45,4 @@ https://www.figma.com/file/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=0%3A
 
 ## Home y registro a la pagina
 
-https://www.figma.com/file/1ok5iear4A0RGvgDzn5tTs/GameZone
+https://www.figma.com/proto/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=1%3A2&scaling=min-zoom
