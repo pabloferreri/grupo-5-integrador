@@ -2,7 +2,7 @@
 
 ## ¿Qué productos o servicios brindará nuestro sitio?
 
-### Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.
+Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.
 
 ## ¿Quién será nuestra audiencia objetivo?
 
