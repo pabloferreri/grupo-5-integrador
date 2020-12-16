@@ -41,8 +41,8 @@ Facundo Rubio: 24 años. Es analista en sistemas. Actualmente se desarrolla como
 
 ## Carrito de Compras
 
-https://www.figma.com/file/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=0%3A1
+https://www.figma.com/proto/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=1%3A2&scaling=min-zoom
 
 ## Home y registro a la pagina
 
-https://www.figma.com/proto/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=1%3A2&scaling=min-zoom
+https://www.figma.com/proto/1ok5iear4A0RGvgDzn5tTs/GameZone?node-id=26%3A3&scaling=min-zoom
