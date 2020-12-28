@@ -27,9 +27,15 @@ Facundo Rubio: 24 años. Es analista en sistemas. Actualmente se desarrolla como
 
 # Paleta de Colores 
 
-[2F2BFF] 2F2BFF
+2F2BFF
 
-[2CFCD6] 2CFCD6
+18A7FF
+
+2CFCD6
+
+#404040
+
+#FFFFFF
 
 
 # Tipografias
