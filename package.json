@@ -1,0 +1,22 @@
+{
+  "name": "grupo-5-integrador",
+  "version": "1.0.0",
+  "description": "Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.",
+  "main": "apps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloferreri/grupo-5-integrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pabloferreri/grupo-5-integrador/issues"
+  },
+  "homepage": "https://github.com/pabloferreri/grupo-5-integrador#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
