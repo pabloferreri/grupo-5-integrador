@@ -2,7 +2,7 @@
   "name": "grupo-5-integrador",
   "version": "1.0.0",
   "description": "Nuestra pagina ofrecera un servicio de venta de productos Informatico y todo lo referido a Hardware.",
-  "main": "apps.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
