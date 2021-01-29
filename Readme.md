@@ -52,3 +52,7 @@ https://www.figma.com/proto/6NAqbwkOgj0S2thxaxAzgd/Carrito-de-compra?node-id=1%3
 ## Home y registro a la pagina
 
 https://www.figma.com/proto/1ok5iear4A0RGvgDzn5tTs/GameZone?node-id=26%3A3&scaling=min-zoom
+
+## Trello
+
+https://trello.com/b/ctuXWN7a/gamerzone
