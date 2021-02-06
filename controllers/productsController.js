@@ -1,7 +1,7 @@
 
 const productsController = {
     show : function(req,res) {
-        return res.render('product-list')
+        return res.render('product-list',{title : "Products"})
     }
 }
 
