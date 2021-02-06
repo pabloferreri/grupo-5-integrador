@@ -3,6 +3,10 @@ body {
     font-weight: 300
 }
 
+.imagen-carrusel{
+    width: 100%;
+}
+
 .product-card {
     border: none;
     border-radius: 10px;
