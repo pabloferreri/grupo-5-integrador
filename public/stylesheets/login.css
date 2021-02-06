@@ -24,3 +24,25 @@
     left: 0;
     z-index: 1;
 }
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+    box-shadow: 4px 4px 4px grey;
+    margin-left: 5px;
+}
+
+.btn-google {
+    background-color: gray;  
+    box-shadow: 4px 4px 4px grey;
+    color: #FFF;
+    margin-right: 5px;
+}
+
+.btn:hover{
+    box-shadow: 10px 5px 10px grey;
+}
+
+.form-group{
+    margin-bottom: 5px;
+}
