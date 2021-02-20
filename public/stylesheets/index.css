@@ -10,11 +10,13 @@ body {
 .product-card {
     border: none;
     border-radius: 10px;
-    box-shadow: 2px 5px 5px grey
+    box-shadow: 2px 5px 5px grey;
+    min-height: 70vh;
 }
 
 .img-container {
-    position: relative
+    position: relative;
+    min-height: 50vh;
 }
 
 .img-container .first {
