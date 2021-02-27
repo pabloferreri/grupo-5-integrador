@@ -6,48 +6,48 @@
 
     <main>
         <div class="container">
-            <form action="action_page.php">
+            <form action="/productos/crear" method="POST" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-25">
                   <label for="fname">Nombre del producto</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="text" id="fname" name="firstname">
+                  <input class="input-forms" type="text" id="name" name="name">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="lname">Precio</label>
+                  <label for="price">Precio</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="lname" name="lastname">
+                  <input class="input-forms" type="number" id="price" name="price">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="lname">Descuento</label>
+                  <label for="discount">Descuento</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="lname" name="lastname">
+                  <input class="input-forms" type="number" id="discount" name="discount">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="Categoria">Categoria</label>
+                  <label for="category">Categoria</label>
                 </div>
                 <div class="col-75">
-                  <select id="Categoria" name="Categoria">
-                    <option value="visited">visited</option>
-                    <option value="In-sale">In-sale</option>
+                  <select id="category" name="category">
+                    <option value="visited">visitados</option>
+                    <option value="In-sale">En oferta</option>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="Descripcion">Descripcion del producto</label>
+                  <label for="Descripcion">Imagen del producto</label>
                 </div>
                 <div class="col-75">
-                    <input type="file" id="myFile" name="filename">
+                    <input type="file" id="file" name="image">
                 </div>
               </div>
               <div class="row">
@@ -59,7 +59,7 @@
                 </div>
               </div>
               <div class="p-1 ">
-                <button class="btn btn-primary w-100 p-2">Crear</button>
+                <button class="btn btn-primary w-100 p-2" type="submit">Crear</button>
             </div>
             </form>
           </div>  

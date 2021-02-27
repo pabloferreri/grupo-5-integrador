@@ -6,13 +6,13 @@
 
     <main>
         <div class="container">
-            <form action="action_page.php">
+            <form action="/productos/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-25">
-                  <label for="fname">Nombre del producto</label>
+                  <label for="fname"><%= product.name%></label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="text" id="fname" name="firstname">
+                  <input class="input-forms" type="text" id="name" name="name" value="<%= product.name%>">
                 </div>
               </div>
               <div class="row">
@@ -20,7 +20,7 @@
                   <label for="lname">Precio</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="lname" name="lastname">
+                  <input class="input-forms" type="number" id="price" name="price" value="<%= product.price%>">
                 </div>
               </div>
               <div class="row">
@@ -28,7 +28,7 @@
                   <label for="lname">Descuento</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="lname" name="lastname">
+                  <input class="input-forms" type="number" id="discount" name="discount" value="<%= product.discount%>">
                 </div>
               </div>
               <div class="row">
@@ -37,8 +37,8 @@
                 </div>
                 <div class="col-75">
                   <select id="Categoria" name="Categoria">
-                    <option value="visited">visited</option>
-                    <option value="In-sale">In-sale</option>
+                    <option value="visited" <%= product.category == "visited"? "selected": null %>>visited</option>
+                    <option value="In-sale" <%= product.category == "in-sale"? "selected": null %>>In-sale</option>
                   </select>
                 </div>
               </div>
@@ -47,7 +47,7 @@
                   <label for="Descripcion">Descripcion del producto</label>
                 </div>
                 <div class="col-75">
-                    <input type="file" id="myFile" name="filename">
+                    <input type="file" id="file" name="image">
                 </div>
               </div>
               <div class="row">
@@ -55,11 +55,11 @@
                   <label for="Descripcion">Descripcion del producto</label>
                 </div>
                 <div class="col-75">
-                  <textarea id="Descripcion" name="Descripcion" style="height:200px"></textarea>
+                  <textarea id="Descripcion" name="Descripcion" style="height:200px"><%= product.description%></textarea>
                 </div>
               </div>
               <div class="p-1 ">
-                <button class="btn btn-primary w-100 p-2">Crear</button>
+                <button class="btn btn-primary w-100 p-2" type="submit">Crear</button>
             </div>
             </form>
           </div>  
