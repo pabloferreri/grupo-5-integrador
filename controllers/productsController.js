@@ -19,7 +19,9 @@ const productsController = {
 			return res.send("error");
 		}
 		
-        //return res.render('products/detail',{products: products, title : "Detalle del prodcto", stylesheet: 'detail.css'})
+    },
+    showCreate: (req,res)=>{
+        return res.render('products/crear-producto',{title: "Crear Producto", stylesheet: "crear-producto.css"});
     }
 }
 
