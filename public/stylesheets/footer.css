@@ -2,6 +2,8 @@
     padding:50px 0;
     background-color:#fff;
     color:#4b4c4d;
+    border-top: solid #d3dad2;
+    margin-top: 20px;
   }
   
   .footer-clean h3 {
