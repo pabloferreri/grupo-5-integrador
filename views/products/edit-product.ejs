@@ -6,45 +6,45 @@
 
     <main>
         <div class="container">
-            <form action="/productos/crear" method="POST" enctype="multipart/form-data">
+            <form action="/productos/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-25">
-                  <label for="fname">Nombre del producto</label>
+                  <label for="fname"><%= product.name%></label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="text" id="name" name="name">
+                  <input class="input-forms" type="text" id="name" name="name" value="<%= product.name%>">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="price">Precio</label>
+                  <label for="lname">Precio</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="price" name="price">
+                  <input class="input-forms" type="number" id="price" name="price" value="<%= product.price%>">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="discount">Descuento</label>
+                  <label for="lname">Descuento</label>
                 </div>
                 <div class="col-75">
-                  <input class="input-forms" type="number" id="discount" name="discount">
+                  <input class="input-forms" type="number" id="discount" name="discount" value="<%= product.discount%>">
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="category">Categoria</label>
+                  <label for="Categoria">Categoria</label>
                 </div>
                 <div class="col-75">
-                  <select id="category" name="category">
-                    <option value="visited">visitados</option>
-                    <option value="In-sale">En oferta</option>
+                  <select id="Categoria" name="Categoria">
+                    <option value="visited" <%= product.category == "visited"? "selected": null %>>visited</option>
+                    <option value="In-sale" <%= product.category == "in-sale"? "selected": null %>>In-sale</option>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="Descripcion">Imagen del producto</label>
+                  <label for="Descripcion">Descripcion del producto</label>
                 </div>
                 <div class="col-75">
                     <input type="file" id="file" name="image">
@@ -55,7 +55,7 @@
                   <label for="Descripcion">Descripcion del producto</label>
                 </div>
                 <div class="col-75">
-                  <textarea id="Descripcion" name="Descripcion" style="height:200px"></textarea>
+                  <textarea id="Descripcion" name="Descripcion" style="height:200px"><%= product.description%></textarea>
                 </div>
               </div>
               <div class="p-1 ">

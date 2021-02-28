@@ -6,31 +6,50 @@
     <%- include('../partials/header.ejs')  %> 
     
     <main>
-        <div class="product-conteiner">
-            <h2 class="product-title">Nombre del producto</h2>
-            <div class="product-detail">
+       
+         
+       
+        <div class="container-fluid">
+            <h2 class="p-2"><%= product.name%></h2>
+        
+            <div class="d-inline-flex p-2 w-100 ">
+                <div class="w-75 ">
+                    <section>
+                        <img src="/images/products/<%= product.image%>" alt="Responsive image" class="img-fluid img-thumbnail">
+                    </section>
+                </div>
+
+                        
+                <div class="flex-column w-75 p-1">
+                <h2 class="p-2"><%= product.name%></h2>
                 <section>
-                    <img src="/images/products/mouse.jpg" alt="">
+                    <h5 class="p-1">$<%= product.price%></h5> 
+                    <h5 class="p-1"><%= product.discount%>%</h5>
                 </section>
-                <article>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, officiis! Neque deleniti cupiditate nobis modi corporis. Maxime, eveniet? Nemo veritatis quisquam deserunt facere. Autem tenetur in dicta veritatis incidunt error!
-                </article>
+                <h2 class="p-2">$<%= product.price - ((product.price*product.discount)/100)%></h2>
+                
+                <p class="p-1">Paga en X cuotas sin interes</p>
+                <p class="p-1">Retiro gratis en los locales del vendedor</p>
+
+                <div class="p-1 ">
+                    <button class="btn btn-primary w-100 p-2">Comprar ahora</button>
+                    
+                </div>
+                <div class="p-1 ">
+                    <button class="btn btn-primary w-100 p-2">Agregar al carrito</button>
+                </div>
+                
             </div>
-            <h2>Nombre del producto</h2>
-            <section>
-                <h5>$99.99</h5> 
-                <h5>88%</h5>
-            </section>
-            <h2>$950.00</h2>
-            <p>Paga en X cuotas sin interes</p>
-            <p>Retiro gratis en los locales del vendedor</p>
-
-            <div class="button-buy">
-                <button></button>
-
             </div>
-
+           
         </div>
+
+        <div class="container-fluid">
+            <article class="">
+                <%= product.description%>
+            </article>
+        </div>
+
     </main>
 
     <!--fotter//-->
