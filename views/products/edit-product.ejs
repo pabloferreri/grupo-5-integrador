@@ -36,7 +36,7 @@
                   <label for="Categoria">Categoria</label>
                 </div>
                 <div class="col-75">
-                  <select id="Categoria" name="Categoria">
+                  <select id="Categoria" name="category">
                     <option value="visited" <%= product.category == "visited"? "selected": null %>>visited</option>
                     <option value="In-sale" <%= product.category == "in-sale"? "selected": null %>>In-sale</option>
                   </select>
@@ -55,7 +55,7 @@
                   <label for="Descripcion">Descripcion del producto</label>
                 </div>
                 <div class="col-75">
-                  <textarea id="Descripcion" name="Descripcion" style="height:200px"><%= product.description%></textarea>
+                  <textarea id="Descripcion" name="description" style="height:200px"><%= product.description%></textarea>
                 </div>
               </div>
               <div class="p-1 ">
