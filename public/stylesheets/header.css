@@ -47,6 +47,14 @@ header{
     display: none;
 }
 
+.links a li{
+    transition: color 0.5s;
+}
+
+.links a li:hover{
+    transition: color, 0.5s;
+    color: black;
+}
 
 
 @media (min-width: 600px){
