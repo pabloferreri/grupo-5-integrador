@@ -6,20 +6,19 @@ const path = require('path');
 //----------- multer require ------------------
 const multer = require('multer');
 
-let multerDiskStorege = multer.diskStorage({
+const multerDiskStorage = multer.diskStorage({
 
     destination: (req,file,cb)=>{
-        let folder = path.join(__dirname,"../public/images/products");
-        cb(null,folder);
+        cb(null,"./public/images/products");
     },
     filename: (req,file,cb)=>{
-        let imageName = Date.now() + path.extname(file.originalname);
+        let imageName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null,imageName);
     }
 
 })
 
-let fileUpload = multer({storege: multerDiskStorege});
+let fileUpload = multer({storage: multerDiskStorage});
 
 //----------- product Controller require ------
 const productsController = require('../controllers/productsController');

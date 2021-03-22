@@ -40,7 +40,7 @@ const productsController = {
 			"discount":req.body.discount,
 			"category":req.body.category,
 			"description":req.body.description,
-			"image":req.body.image
+			"image": req.file.filename
 		}
 
 		console.log(req.body)
@@ -66,7 +66,7 @@ const productsController = {
 		
 		let productToEdit=products.find(product=>(product.id==req.params.id));
 
-		console.log(req.body)
+		console.log(req.file)
 
  		let newArray = products.map(product=>{
 
@@ -76,7 +76,7 @@ const productsController = {
 				product.discount =req.body.discount;
 				product.category =req.body.category;
 				product.description =req.body.description;
-				
+				product.image = req.file.originalname;
 			 }
 			 return product;
 		 })
