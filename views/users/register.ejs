@@ -20,19 +20,19 @@
 	        <p class="divider-text">
                 <span class="bg-light"></span>
             </p>
-	        <form>
+	        <form action="" method="POST">
 	            <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input name="" class="form-control" placeholder="Nombre Completo" type="text">
+                    <input name="name" class="form-control" placeholder="Nombre Completo" type="text">
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
-                    <input name="" class="form-control" placeholder="Correo Electronico" type="email" >
+                    <input name="email" class="form-control" placeholder="Correo Electronico" type="email" >
                 </input>
                 </div> 
 <!-- form-group// -->
@@ -40,25 +40,32 @@
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
-    	            <input name="" class="form-control" placeholder="Telefono" type="text">
+    	            <input name="phone" class="form-control" placeholder="Telefono" type="text">
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+    	            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fas fa-portrait"></i> </span>
+		            </div>
+    	            <input name="avatar" class="form-control" type="file">
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Crear contraseña" type="password">
+                    <input class="form-control" placeholder="Crear contraseña" type="password" name="pass">
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Repetir contraseña" type="password">
+                    <input class="form-control" placeholder="Repetir contraseña" type="password" name="pass_confirm">
                 </div> 
 <!-- form-group// -->                                      
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Crear Cuenta  </button>
+                    <button type="submit" class="btn btn-primary btn-block" value="Enviar"> Crear Cuenta  </button>
                 </div> 
 <!-- form-group// -->      
                 <p class="text-center">¿Ya tiene una cuenta? <a href="/usuarios/iniciar-sesion">Ingresar</a></p>                                                                 

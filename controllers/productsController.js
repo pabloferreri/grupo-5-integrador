@@ -22,7 +22,7 @@ const productsController = {
 		const product = products.find(product => product.id == req.params.id);
 
 		if (product) {
-			return res.render('products/detail',{product: product, title : "Detalle del prodcto", stylesheet: 'detail.css'})
+			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
 		}else{
 			return res.send("error");
 		}

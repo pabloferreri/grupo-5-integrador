@@ -5,5 +5,6 @@ const index = require('../controllers/indexController');
 
 /* GET home page. */
 router.get('/', index.show);
+router.get('/carrito', index.cart);
 
 module.exports = router;
