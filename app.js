@@ -14,7 +14,7 @@ var productsRouter = require('./routes/products');
 var app = express();
 
 //app.listen
-app.listen(process.env.PORT || 3002, () =>{
+app.listen(process.env.PORT || 3000, () =>{
   console.log('Servidor corriendo en puerto 3000.');
 })
 

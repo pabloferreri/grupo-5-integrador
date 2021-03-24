@@ -1,6 +1,6 @@
 body {
     font-family: "Poppins", sans-serif;
-    font-weight: 300
+    font-weight: 300;
 }
 
 .product-card {
@@ -30,8 +30,8 @@ body {
     border-top-right-radius: 5px
 }
 
-.product-detail-container {
-    padding: 10px
+.row, .product-detail-container{
+    padding: 10px;
 }
 @media (min-width:540px){
     .col-md-3{

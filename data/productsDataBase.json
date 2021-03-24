@@ -1,14 +1,16 @@
 [
   {
     "id": 1,
-    "name": "Pc gamer marca 'X'",
+    "name": "Gabinete Pc Gamer",
     "price": "50000",
     "discount": "5",
+    "category": "visited",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magn",
     "image": "gabinete.jpg"
   },
   {
     "id": 2,
-    "name": "Mouse",
+    "name": "Mouse Gamer",
     "price": "10000",
     "discount": "20",
     "category": "visited",
@@ -17,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "auriculares",
+    "name": "Auriculares",
     "price": "20000",
     "discount": "30",
     "category": "visited",
@@ -26,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "teclado",
+    "name": "Teclado",
     "price": "15000",
     "discount": "15",
     "category": "visited",
