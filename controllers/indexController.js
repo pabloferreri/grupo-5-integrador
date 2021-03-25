@@ -4,7 +4,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const productsController = {
+const indexController = {
     show : function(req,res) {
         return res.render('index', {products: products, title: "Home", stylesheet: "index.css"})
     },
@@ -13,4 +13,4 @@ const productsController = {
     },
 }
 
-module.exports = productsController;
+module.exports = indexController;
