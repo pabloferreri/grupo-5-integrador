@@ -43,13 +43,12 @@ const productsController = {
 			"image": req.file.filename
 		}
 
-		console.log(req.body)
 		products.push(productToStore);
 		let productsJson=JSON.stringify(products,null,2)
 
 		fs.writeFileSync("./data/productsDataBase.json",productsJson)
 
-		return res.redirect("/productos")
+		return res.redirect("/productos")	
 	},
     
 	edit: (req, res) => {
@@ -87,6 +86,17 @@ const productsController = {
 
 		res.redirect("/");
 	},
+	delete: (req,res) => {
+		console.log(req.params.id);
+
+
+		let leftProducts = products.filter(product => req.params.id !== product.id);
+
+		let productJson = JSON.stringify(leftProducts, null, 2);
+		fs.writeFileSync('./data/productsDataBase.json', productJson);
+
+		return res.redirect('/')
+	}
 }
 
 module.exports = productsController;

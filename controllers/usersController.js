@@ -28,7 +28,7 @@ const usersController = {
 
     },
     delete: (req,res)=>{
-
+        
     },
 }
 
