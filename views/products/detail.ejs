@@ -21,14 +21,17 @@
 
                         
                 <div class="flex-column w-75 p-1">
-                <h2 class="p-2"><%= product.name%></h2>
+                <div id="detail-name">
+                    <h2 class="p-2"><%= product.name%></h2>
                 <section>
-                    <h5 class="p-1">$<%= product.price%></h5> 
-                    <h5 class="p-1"><%= product.discount%>%</h5>
+                    <div id="price-discount"><h2 class="p-2">$<%= (product.price * (100 - product.discount))/100 %></h2>
+                        <h5 class="p-1"><%= product.discount%>% OFF</h5></div>
+                        <h5 class="p-1" id="price"><strike>$<%= product.price%></strike></h5>
                 </section>
-                <h2 class="p-2">$<%= product.price - ((product.price*product.discount)/100)%></h2>
+                </div>
+                 
                 
-                <p class="p-1">Paga en X cuotas sin interes</p>
+                <p class="p-1">Paga en <%= product.fees%> cuotas sin interes</p>
                 <p class="p-1">Retiro gratis en los locales del vendedor</p>
 
                 <div class="p-1 ">      
