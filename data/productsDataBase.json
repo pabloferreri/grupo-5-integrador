@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "name": "Mouse Gamer",
+    "name": "Mouse Gamer Pc",
     "price": "10.000",
     "discount": "20",
     "category": "visited",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "Auriculares",
+    "name": "Auriculares Gamer",
     "price": "20.000",
     "discount": "30",
     "category": "visited",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "Teclado",
+    "name": "Teclado Gamer",
     "price": "15.000",
     "discount": "15",
     "category": "visited",

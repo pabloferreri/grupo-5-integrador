@@ -33,8 +33,9 @@ body {
 
 .img-container {
     position: relative;
-    min-height: 35vh;
     display: flex;
+    min-height: 50vh;
+    max-height: 50vw;
     justify-content: center;
     align-items: center;
 }
@@ -45,7 +46,11 @@ body {
 
 .product-detail-container {
     padding: 10px;
-    height: 16vw;
+
+}
+
+.product-detail-container article{
+    display: block;
 }
 
 #name_price{
@@ -56,19 +61,78 @@ body {
         max-width: 80vw;
         align-self: center;
     }
+
+    .product-detail-container {
+        height: 38vw;
+    }
+
     .row{
         justify-content: space-around;
     }
-}
-
-@media (max-width: 755px){
+    .product-detail-container article{
+        display: none;
+    }
     .img-container img {
         width: 80vw; height: auto;
     }
+    .img-container img {
+        width: 50vw; height: auto;
+    }
     .product-detail-container {
-        height: 30vw;
+        font-size: 1rem;
+        min-height: 15vw;
+        height: fit-content;
+    }
+    #name_price, #name_price h5{
+        font-size: 1.2rem;
     }
 }
 
-@media (max-width: 1050px){
+@media (min-width: 750px){
+    .product-detail-container article{
+        display: block;
+    }
+    .img-container img {
+        width: 80vw; height: auto;
+    }
+    .img-container{
+        min-height: 30vw;
+    }
+    .product-detail-container {
+        font-size: 1rem;
+        min-height: 30vw;
+        height: fit-content;
+    }
+    #name_price, #name_price h5{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1000px){
+    .img-container {
+        min-height: 35vw;
+    }
+    .product-detail-container {
+        min-height: 0;
+    }
+    .product-detail-container {
+        font-size: 1rem;
+    }
+    #name_price, #name_price h5{
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+}
+
+@media(min-width: 3000px){
+    .product-detail-container{
+        font-size: 3.5rem;
+        padding: 25px;
+    }
+    #name_price, #name_price h5{
+        font-size: 4rem;
+    }
+    .product-detail-container button{
+        font-size: 2.5rem;
+    }
 }
