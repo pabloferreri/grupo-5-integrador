@@ -33,7 +33,7 @@ body {
 
 .img-container {
     position: relative;
-    min-height: 50vh;
+    min-height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,9 +44,14 @@ body {
 }
 
 .product-detail-container {
-    padding: 10px
+    padding: 10px;
+    height: 16vw;
 }
-@media (min-width:540px){
+
+#name_price{
+    font-size: 1.4rem;
+}
+@media (max-width:540px){
     .col-md-3{
         max-width: 80vw;
         align-self: center;
@@ -60,10 +65,10 @@ body {
     .img-container img {
         width: 80vw; height: auto;
     }
+    .product-detail-container {
+        height: 30vw;
+    }
 }
 
 @media (max-width: 1050px){
-    .img-container {
-        min-height: 20vh;
-    }
 }

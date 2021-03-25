@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Gabinete Pc Gamer",
-    "price": "50000",
+    "price": "50.000",
     "discount": "5",
     "category": "visited",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magn",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Mouse Gamer",
-    "price": "10000",
+    "price": "10.000",
     "discount": "20",
     "category": "visited",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magn",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Auriculares",
-    "price": "20000",
+    "price": "20.000",
     "discount": "30",
     "category": "visited",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magn",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Teclado",
-    "price": "15000",
+    "price": "15.000",
     "discount": "15",
     "category": "visited",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, magn",
