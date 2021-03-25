@@ -110,10 +110,17 @@ body {
 
 @media (min-width: 1000px){
     .img-container {
-        min-height: 25vh;
+        min-height: 35vw;
     }
     .product-detail-container {
         min-height: 0;
+    }
+    .product-detail-container {
+        font-size: 1rem;
+    }
+    #name_price, #name_price h5{
+        font-size: 1.3rem;
+        font-weight: 600;
     }
 }
 
