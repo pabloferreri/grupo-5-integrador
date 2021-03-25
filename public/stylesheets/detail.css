@@ -1,0 +1,14 @@
+#price-discount, #detail-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+#price-before-discount{
+    float: right;
+}
+
+#price{
+    float: right;
+    color: #7d8491;
+    font-size: 1rem;
+}

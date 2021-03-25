@@ -60,6 +60,11 @@ body {
 #categoria-index{
     margin: 2vw 0 0 1vw;
 }
+#price{
+    float: right;
+    color: #7d8491;
+    font-size: 1rem;
+}
 @media (max-width:540px){
     .col-md-3{
         max-width: 80vw;
