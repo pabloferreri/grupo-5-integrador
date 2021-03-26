@@ -1,21 +1,20 @@
 [
   {
     "id": 1,
-    "name": "pepe",
+    "name": "raul",
     "lastName": "diaz",
-    "email": "pepediaz@gmail.com",
-    "phone": "22222",
-    "password": "222",
-    "password-confirm": "222",
-    "image": "1616728507764_img.jpg"
+    "email": "rauldiaz@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$9/OH/atVa7nri85WLI6vBO39Ct3koZ49FlYdx/IEkx70VD/acNmBK",
+    "image": "1616782784089_img.jpg"
   },
   {
     "id": 2,
-    "name": "raul",
-    "lastName": "gomez",
-    "email": "raulgomez@gmail.com",
+    "name": "Pablo",
+    "lastName": "Ferreri",
+    "email": "pablo.ferreri.1991.pf@gmail.com",
     "phone": "222222",
-    "password": "$2a$10$1C9YjGIcKTiC49Yqts8VrehUgfAl2P7FD4esHpTtfkM71uxCie7Kq",
-    "image": "1616778395226_img.jpg"
+    "password": "$2a$10$.wGTrhOTVFnm2PB2CUol7uHo0VyShAdDU1I9Ya4LBU4FWEyV/mvGq",
+    "image": "1616783986450_img.jpg"
   }
 ]
