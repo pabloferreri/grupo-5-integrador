@@ -3,6 +3,7 @@ const path = require('path');
 const { send } = require('process');
 const bcrypt = require('bcrypt');
 
+
 const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
@@ -27,9 +28,9 @@ const usersController = {
     },
     save: (req,res)=>{
         
-        const saltRounds = 10;
+        
         const passwordPlainText = req.body.password;
-        const passwordHash = bcrypt.hashSync(passwordPlainText, saltRounds);
+        const passwordHash = bcrypt.hashSync(passwordPlainText, 10);
 
         const userToSave = {
 			"id": maxId,
@@ -37,7 +38,7 @@ const usersController = {
             "lastName": req.body.lastname,
 			"email":req.body.email,
 			"phone":req.body.phone,
-			"password":passwordHash,
+			"password": passwordHash,
 			"image": req.file.filename
 		}
 

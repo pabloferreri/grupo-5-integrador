@@ -1,11 +1,22 @@
 [
   {
+
+    "id": 1,
+    "name": "pepe",
+    "lastName": "diaz",
+    "email": "pepediaz@gmail.com",
+    "phone": "22222",
+    "password": "222",
+    "password-confirm": "222",
+    "image": "1616728507764_img.jpg"
+  },
+  {
     "id": 2,
-    "name": "ProbandoNombre",
-    "lastName": "ProbandoApellido",
-    "email": "probando@gmail.com",
-    "phone": " 11 4061 2401",
-    "password": "$2b$10$Rtq8Iqev7RkkHUx4XIYDqOiya3.klTon3cwekjizi./QpqfkX//G2",
-    "image": "1616783144836_img.jpeg"
+    "name": "raul",
+    "lastName": "gomez",
+    "email": "raulgomez@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$1C9YjGIcKTiC49Yqts8VrehUgfAl2P7FD4esHpTtfkM71uxCie7Kq",
+    "image": "1616778395226_img.jpg"
   }
 ]
