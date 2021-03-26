@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { send } = require('process');
+const bcrypt = require('bcrypt');
 
 const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
@@ -26,25 +27,35 @@ const usersController = {
     },
     save: (req,res)=>{
         
+        const saltRounds = 10;
+        const passwordPlainText = req.body.password;
+        const passwordHash = bcrypt.hashSync(passwordPlainText, saltRounds);
+
         const userToSave = {
 			"id": maxId,
 			"name": req.body.name,
             "lastName": req.body.lastname,
 			"email":req.body.email,
 			"phone":req.body.phone,
-			"password":req.body.password,
-			"password-confirm":req.body.passwordConfirmation,
+			"password":passwordHash,
 			"image": req.file.filename
 		}
 
-		console.log(req.body)
+		
+        let confirmPassword = req.body.passwordConfirmation;
+        if(passwordPlainText == confirmPassword){
+            users.push(userToSave);
+            let userJson=JSON.stringify(users,null,2);
+            console.log(req.body);
+            fs.writeFileSync("./data/usersDataBase.json",userJson);
+    
+            return res.redirect("/productos");
+        }else{
+            console.log("error al registrarse")
+            return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
+            
+        }
 
-		users.push(userToSave);
-		let userJson=JSON.stringify(users,null,2)
-
-		fs.writeFileSync("./data/usersDataBase.json",userJson)
-
-		return res.redirect("/productos")	
     },
     profile: (req,res)=>{
 
