@@ -11,7 +11,7 @@ const multerDiskStorage = multer.diskStorage({
     destination: (req,file,cb)=>{
         cb(null,"./public/images/products");
     },
-    filename: (req,file,cb)=>{
+    filename2: (req,file,cb)=>{
         let imageName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null,imageName);
     }
@@ -32,6 +32,7 @@ router.post('/crear', fileUpload.single("image"),productsController.store);
 
 //----------- product detail -----------------
 router.get('/:id', productsController.detail);
+
 
 //----------- edit product -------------------
 router.get('/:id/edit', productsController.edit);

@@ -1,8 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+const { send } = require('process');
 
-const userFilePath = path.resolve(__dirname, '../data/users.json');
+const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+
+let maxId = 0;
+users.forEach(element => {
+	if(element.id > maxId){ 
+		maxId = element.id;
+	}
+});
+maxId++;
 
 
 const usersController = {
@@ -16,7 +25,26 @@ const usersController = {
 
     },
     save: (req,res)=>{
+        
+        const userToSave = {
+			"id": maxId,
+			"name": req.body.name,
+            "lastName": req.body.lastname,
+			"email":req.body.email,
+			"phone":req.body.phone,
+			"password":req.body.password,
+			"password-confirm":req.body.passwordConfirmation,
+			"image": req.file.filename
+		}
 
+		console.log(req.body)
+
+		users.push(userToSave);
+		let userJson=JSON.stringify(users,null,2)
+
+		fs.writeFileSync("./data/usersDataBase.json",userJson)
+
+		return res.redirect("/productos")	
     },
     profile: (req,res)=>{
 

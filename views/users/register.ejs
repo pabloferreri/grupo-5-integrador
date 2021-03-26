@@ -20,19 +20,25 @@
 	        <p class="divider-text">
                 <span class="bg-light"></span>
             </p>
-	        <form action="" method="POST">
+	        <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
 	            <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input name="name" class="form-control" placeholder="Nombre Completo" type="text">
+                    <input  class="form-control" placeholder="Nombre Completo" type="text" name="name">
+                </div> 
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control" placeholder="Nombre Completo" type="text" name="lastname">
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
-                    <input name="email" class="form-control" placeholder="Correo Electronico" type="email" >
+                    <input  class="form-control" placeholder="Correo Electronico" type="email" name="email">
                 </input>
                 </div> 
 <!-- form-group// -->
@@ -40,28 +46,29 @@
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
-    	            <input name="phone" class="form-control" placeholder="Telefono" type="text">
+    	            <input  class="form-control" placeholder="Telefono" type="text" name="phone">
+                </div> 
+
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Crear contraseña" type="password" name="password">
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Repetir contraseña" type="password" name="passwordConfirmation">
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fas fa-portrait"></i> </span>
 		            </div>
-    	            <input name="avatar" class="form-control" type="file">
-                </div> 
-<!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Crear contraseña" type="password" name="pass">
-                </div> 
-<!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Repetir contraseña" type="password" name="pass_confirm">
+    	            <input  class="form-control" type="file" name="avatar">
                 </div> 
 <!-- form-group// -->                                      
                 <div class="form-group">

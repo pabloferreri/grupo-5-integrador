@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "",
+    "email": "",
+    "phone": "",
+    "avatar": "",
+    "pass": ""
+  },
+  {
+    "id": 2,
+    "name": "Pablo",
+    "lastName": "Ferreri",
+    "email": "pablo.ferreri.1991.pf@gmail.com",
+    "phone": "222222",
+    "password": "2222",
+    "password-confirm": "2222"
+  }
+]
