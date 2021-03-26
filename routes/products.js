@@ -26,12 +26,12 @@ const productsController = require('../controllers/productsController');
 /* GET home page. */
 router.get('/', productsController.index);
 
-//----------- product detail -----------------
-router.get('/:id', productsController.detail);
-
 //----------- create product -----------------
 router.get('/crear', productsController.create);
 router.post('/crear', fileUpload.single("image"),productsController.store); 
+
+//----------- product detail -----------------
+router.get('/:id', productsController.detail);
 
 //----------- edit product -------------------
 router.get('/:id/edit', productsController.edit);

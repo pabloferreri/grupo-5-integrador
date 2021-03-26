@@ -90,7 +90,9 @@ const productsController = {
 		console.log(req.params.id);
 
 
-		let leftProducts = products.filter(product => req.params.id !== product.id);
+		let leftProducts = products.filter(oneProduct => oneProduct.id != req.params.id);
+
+		console.log(leftProducts);
 
 		let productJson = JSON.stringify(leftProducts, null, 2);
 		fs.writeFileSync('./data/productsDataBase.json', productJson);
