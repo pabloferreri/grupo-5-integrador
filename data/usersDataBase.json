@@ -1,19 +1,12 @@
 [
   {
     "id": 1,
-    "name": "",
-    "email": "",
-    "phone": "",
-    "avatar": "",
-    "pass": ""
-  },
-  {
-    "id": 2,
-    "name": "Pablo",
-    "lastName": "Ferreri",
-    "email": "pablo.ferreri.1991.pf@gmail.com",
-    "phone": "222222",
-    "password": "2222",
-    "password-confirm": "2222"
+    "name": "pepe",
+    "lastName": "diaz",
+    "email": "pepediaz@gmail.com",
+    "phone": "22222",
+    "password": "222",
+    "password-confirm": "222",
+    "image": "1616728507764_img.jpg"
   }
 ]
