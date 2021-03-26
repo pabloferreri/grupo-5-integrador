@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { send } = require('process');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 
 const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
@@ -30,7 +30,7 @@ const usersController = {
         
         
         const passwordPlainText = req.body.password;
-        const passwordHash = bcrypt.hashSync(passwordPlainText, 10);
+        const passwordHash = bcryptjs.hashSync(passwordPlainText, 10);
 
         const userToSave = {
 			"id": maxId,

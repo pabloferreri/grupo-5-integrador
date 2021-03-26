@@ -1,6 +1,5 @@
 [
   {
-
     "id": 1,
     "name": "raul",
     "lastName": "diaz",
@@ -11,11 +10,11 @@
   },
   {
     "id": 2,
-    "name": "Pablo",
-    "lastName": "Ferreri",
-    "email": "pablo.ferreri.1991.pf@gmail.com",
+    "name": "raul",
+    "lastName": "gomez",
+    "email": "raulgomez@gmail.com",
     "phone": "222222",
-    "password": "$2a$10$.wGTrhOTVFnm2PB2CUol7uHo0VyShAdDU1I9Ya4LBU4FWEyV/mvGq",
-    "image": "1616783986450_img.jpg"
+    "password": "$2a$10$RJLY3ZoCGIdWuRS2ZHT0bOuCeUHaiIrxZmUa7oDCKMjRhtuJgg8hy",
+    "image": "1616787203278_img.jpg"
   }
 ]

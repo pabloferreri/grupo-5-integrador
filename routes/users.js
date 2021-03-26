@@ -1,24 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
-const { body } = require("express-validator");
-
-
-const validations = [
-    body("name")
-        .notEmpty().withMessage("Ingrese su nombre"),
-    body("lastname")
-        .notEmpty().withMessage("Ingrese su apellido"),
-    body("email")
-        .notEmpty().withMessage("Ingrese un email valido").bail()
-        .isEmail().withMessage('El formato del email ingresado no es válido'),
-    body("phone")
-        .notEmpty().withMessage("Ingrese un número de teléfono").bail()
-        .isInt().withMessage('Ingrese un caracter valido'),
-    body("avatar")
-        .notEmpty().withMessage("Ingrese una contraseña").bail()
-]
-
 
 
 //----------- multer require ------------------
@@ -45,7 +27,7 @@ const users = require('../controllers/usersController');
 
 //----------- register -----------------
 router.get('/registro', users.register);
-router.post('/registro',validations,fileUpload.single("avatar"),users.save);
+router.post('/registro',fileUpload.single("avatar"),users.save);
 
 
 //----------- login -----------------

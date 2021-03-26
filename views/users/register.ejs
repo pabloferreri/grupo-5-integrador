@@ -27,11 +27,7 @@
 		            </div>
                     <input  class="form-control" placeholder="Nombre" type="text" name="name">
 
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                         <%= errors.name.msg %> 
-                        </div>
-                       <% } %>
+                    
                 </div> 
                 <div class="form-group input-group">
 		            <div class="input-group-prepend">
@@ -39,11 +35,7 @@
 		            </div>
                     <input  class="form-control" placeholder="Apellido" type="text" name="lastname">
 
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                         <%= errors.lastname.msg %> 
-                        </div>
-                       <% } %>
+                    
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -52,11 +44,7 @@
                     </div>
                     <input  class="form-control" placeholder="Correo Electronico" type="email" name="email">
 
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                        <%= errors.email.msg %> 
-                        </div>
-                    <% } %>
+                  
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -65,11 +53,7 @@
 		            </div>
     	            <input  class="form-control" placeholder="Telefono" type="text" name="phone">
 
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                         <%= errors.phone.msg %> 
-                        </div>
-                       <% } %>
+                    
                 </div> 
 
 <!-- form-group// -->
@@ -79,11 +63,14 @@
                     </div>
                     <input class="form-control" placeholder="Crear contraseña" type="password" name="password">
 
-                    <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                         <%= errors.password.msg %> 
-                        </div>
-                       <% } %>
+                   
+                </div> 
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation">
+
                 </div> 
 <!-- form-group// -->
                 <div class="form-group input-group">
