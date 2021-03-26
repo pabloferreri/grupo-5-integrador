@@ -21,50 +21,93 @@
                 <span class="bg-light"></span>
             </p>
 	        <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
+
+               
 	            <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
                     <input  class="form-control" placeholder="Nombre" type="text" name="name">
-
-                    
+                
                 </div> 
+
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                     <%= errors.name.msg %> 
+                    </div>
+                   <% } %>
+                
+                <% if (locals.errors && errors.lastname) { %>
+                    <div class="text-danger">
+                     <%= errors.lastname.msg %> 
+                    </div>
+                   <% } %>
+
+
                 <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
                     <input  class="form-control" placeholder="Apellido" type="text" name="lastname">
 
-                    
                 </div> 
+
+                
 <!-- form-group// -->
+
+                <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                <%= errors.email.msg %> 
+                </div>
+                <% } %>
+
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
-                    <input  class="form-control" placeholder="Correo Electronico" type="email" name="email">
+                    <input  class="form-control" placeholder="Correo Electronico" type="email" name="email">         
 
-                  
                 </div> 
 <!-- form-group// -->
+
+                <% if (locals.errors && errors.phone) { %>
+                    <div class="text-danger">
+                     <%= errors.phone.msg %> 
+                    </div>
+                   <% } %>
+
+                
+
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
     	            <input  class="form-control" placeholder="Telefono" type="text" name="phone">
+                 </div> 
 
-                    
-                </div> 
-
+                
 <!-- form-group// -->
+
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                    <%= errors.password.msg %> 
+                    </div>
+                <% } %>
+
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input class="form-control" placeholder="Crear contraseña" type="password" name="password">
 
-                   
                 </div> 
+
+                <% if (locals.errors && errors.passwordConfirmation) { %>
+                    <div class="text-danger">
+                    <%= errors.passwordConfirmation.msg %> 
+                    </div>
+                <% } %>
+
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>

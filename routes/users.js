@@ -2,6 +2,24 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 
+// express-validator 
+const { body } = require("express-validator");
+
+const validations = [
+    body("name").notEmpty().withMessage("Ingrese su nombre"),
+    body("lastname").notEmpty().withMessage("Ingrese su apellido"),
+    body("email")
+        .notEmpty().withMessage("Ingrese un email válido").bail()
+        .isEmail().withMessage('El formato del email ingresado no es válido'),
+    body("phone")
+        .notEmpty().withMessage("Ingrese un numero de teléfono"),
+    body("password")
+        .notEmpty().withMessage("Ingrese una contraseña"),
+    body("passwordConfirmation")
+        .notEmpty().withMessage("Reingrese su contraseña")
+]
+
+
 
 //----------- multer require ------------------
 const multer = require('multer');
@@ -27,7 +45,7 @@ const users = require('../controllers/usersController');
 
 //----------- register -----------------
 router.get('/registro', users.register);
-router.post('/registro',fileUpload.single("avatar"),users.save);
+router.post('/registro',fileUpload.single("avatar"),validations,users.save);
 
 
 //----------- login -----------------
