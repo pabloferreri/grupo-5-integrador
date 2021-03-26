@@ -8,5 +8,14 @@
     "password": "222",
     "password-confirm": "222",
     "image": "1616728507764_img.jpg"
+  },
+  {
+    "id": 2,
+    "name": "raul",
+    "lastName": "gomez",
+    "email": "raulgomez@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$1C9YjGIcKTiC49Yqts8VrehUgfAl2P7FD4esHpTtfkM71uxCie7Kq",
+    "image": "1616778395226_img.jpg"
   }
 ]
