@@ -16,7 +16,7 @@ const validations = [
     body("password")
         .notEmpty().withMessage("Ingrese una contraseña"),
     body("passwordConfirmation")
-        .notEmpty().withMessage("Reingrese su contraseña")
+        .notEmpty().withMessage("Las contraseñas no coinciden")
 ]
 
 
