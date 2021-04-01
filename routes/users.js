@@ -28,6 +28,8 @@ const validations = [
                 throw new Error(`Solo puedes introducir imagenes en los siguientes formatos ${extensions.join(', ')}`);
             }
         }
+
+        return true
     })
 ]
 

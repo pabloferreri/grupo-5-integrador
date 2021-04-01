@@ -27,7 +27,7 @@
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input  class="form-control" placeholder="Nombre" type="text" name="name">
+                    <input  class="form-control <%= locals.errors && errors.name? 'is-invalid':null %>" placeholder="Nombre" type="text" name="name" value="<%= locals.oldData? oldData.name : null%>">
                 
                 </div> 
 
@@ -48,7 +48,7 @@
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input  class="form-control" placeholder="Apellido" type="text" name="lastname">
+                    <input  class="form-control <%= locals.errors && errors.lastname? 'is-invalid':null %>" placeholder="Apellido" type="text" name="lastname" value="<%= locals.oldData? oldData.lastname : null%>">
 
                 </div> 
 
@@ -65,7 +65,7 @@
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
-                    <input  class="form-control" placeholder="Correo Electronico" type="email" name="email">         
+                    <input  class="form-control <%= locals.errors && errors.email? 'is-invalid':null %>" placeholder="Correo Electronico" type="email" name="email" value="<%= locals.oldData? oldData.email : null%>">         
 
                 </div> 
 <!-- form-group// -->
@@ -82,7 +82,7 @@
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
-    	            <input  class="form-control" placeholder="Telefono" type="text" name="phone">
+    	            <input  class="form-control <%= locals.errors && errors.phone? 'is-invalid':null %>" placeholder="Telefono" type="text" name="phone" value="<%= locals.oldData? oldData.phone : null%>">
                  </div> 
 
                 
@@ -98,7 +98,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Crear contraseña" type="password" name="password">
+                    <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password">
 
                 </div> 
 
@@ -112,7 +112,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation">
+                    <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation">
 
                 </div> 
 <!-- form-group// -->
@@ -127,7 +127,7 @@
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fas fa-portrait"></i> </span>
 		            </div>
-    	            <input  class="form-control" type="file" name="avatar">
+    	            <input  class="form-control <%= locals.errors && errors.avatar? 'is-invalid':null %> " type="file" name="avatar">
 
                 </div> 
 <!-- form-group// -->                                      

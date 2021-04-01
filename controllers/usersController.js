@@ -31,11 +31,13 @@ const usersController = {
         
         const resultValidation = validationResult(req)
 
-        //return res.send({result: resultValidation.mapped()})
-        //console.log(resultValidation.erro.length)
-
         if (resultValidation.errors.length > 0) {
-            return res.render('users/register', { title : "Registrarse", stylesheet: "register.css",errors: resultValidation.mapped(), oldData: req.body})
+            return res.render('users/register', { 
+                title : "Registrarse", 
+                stylesheet: "register.css",
+                errors: resultValidation.mapped(), 
+                oldData: req.body
+            })
         }else{
         
         const passwordPlainText = req.body.password;
