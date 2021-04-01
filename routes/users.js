@@ -16,7 +16,19 @@ const validations = [
     body("password")
         .notEmpty().withMessage("Ingrese una contraseña"),
     body("passwordConfirmation")
-        .notEmpty().withMessage("Las contraseñas no coinciden")
+        .notEmpty().withMessage("Las contraseñas no coinciden"),
+    body('avatar').custom((value,{req})=>{
+        let file = req.file;
+        let extensions = ['.jpg','.png','.gif'];
+        if(!file){
+            throw new Error('Tienes que introducir una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if(!extensions.includes(fileExtension)){
+                throw new Error(`Solo puedes introducir imagenes en los siguientes formatos ${extensions.join(', ')}`);
+            }
+        }
+    })
 ]
 
 
@@ -40,6 +52,7 @@ let fileUpload = multer({storage: multerDiskStorage});
 
 //----------- user Controller require ------
 const users = require('../controllers/usersController');
+const e = require('express');
 
 /* GET users listing. */
 

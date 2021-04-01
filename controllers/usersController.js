@@ -62,8 +62,7 @@ const usersController = {
             return res.redirect("/productos");
         }else{
             console.log("error al registrarse")
-            return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
-            
+            return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"}); 
         }
         }
 
