@@ -27,21 +27,27 @@ const usersController = {
                 errors: resultValidation.mapped(), 
                 oldData: req.body
             })
-        }else{
-
-            if(req.body.password === req.body.passwordConfirmation){    
-        
-                UserModel.createUser(req.body,req.file)
-                return res.redirect("/productos");
-
-            }else{
-                    
-                return res.render('users/register', {title : "Registrarse", 
-                stylesheet: "register.css",
-                errors: resultValidation.mapped(), 
-                oldData: req.body}); 
-                }     
         }
+        
+        let userFoundDb = UserModel.findByPk("email",req.body.email)
+        
+
+        if(req.body.password === req.body.passwordConfirmation){    
+        
+            UserModel.createUser(req.body,req.file)
+            return res.redirect("/productos");
+
+        }else{
+                    
+            return res.render('users/register', {title : "Registrarse", 
+            stylesheet: "register.css",
+            errors: {
+                passwordConfirmation: {
+                    msg: 'Las contaseñas ingresadas no coinciden.'
+                }
+            }, 
+            oldData: req.body}); 
+        }     
     },
     login:(req,res)=>{
         return res.render('users/login', {title : "Iniciar Sesión",stylesheet : "login.css"});
