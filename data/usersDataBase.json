@@ -7,5 +7,14 @@
     "phone": "222222",
     "password": "$2a$10$VNz4D0Y3ivpRm1rJDQ7GdOq/foqu0eOBoO4ircAbKdDnF8DJE42A6",
     "image": "1617313672148_img.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Pablo",
+    "lastName": "Ferreri",
+    "email": "pablo.ferreri.1991.pf@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$Xk3tdpQbRP2BF/pk5KyQR.nkPYH9GJ2r56F.CEkgWWJV4pO7mk00a",
+    "image": "1617583599820_img.jpg"
   }
 ]

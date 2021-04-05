@@ -20,23 +20,33 @@
 	        <p class="divider-text">
                 <span class="bg-light"></span>
             </p>
-	        <form>
+	        <form method="POST" action="/usuarios/iniciar-sesion">
 <!-- form-group// -->
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
-                    <input name="email" class="form-control" placeholder="Correo Electronico" type="email" >
+                    <input name="email" class="form-control" placeholder="Correo Electronico" type="email" value="<%= locals.oldData? oldData.email : null%>">
                 </input>
                 </div> 
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                     <%= errors.email.msg %> 
+                    </div>
+                   <% } %>
 <!-- form-group// -->
                 
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Ingresar contraseña" type="password" name="pass">
+                    <input class="form-control" placeholder="Ingresar contraseña" type="password" name="password" >
                 </div> 
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                     <%= errors.password.msg %> 
+                    </div>
+                   <% } %>
 <!-- form-group// -->       
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block" value="Enviar"> Ingresar  </button>

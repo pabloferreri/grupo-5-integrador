@@ -3,45 +3,38 @@ var router = express.Router();
 const path = require('path');
 
 // express-validator 
-const validations = require('../middlewares/validationsMiddleware');
+const validationsRegister = require('../middlewares/validationsRegisterMiddleware');
+const validationsLogin = require('../middlewares/validationsLoginMiddleware');
+
 
 //----------- multer require ------------------
-const multer = require('multer');
+const multer = require('../middlewares/multerMiddleware')
 
-const multerDiskStorage = multer.diskStorage({
 
-    destination: (req,file,cb)=>{
-        cb(null,"./public/images/avatars");
-    },
-    filename: (req,file,cb)=>{
-        let imageName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null,imageName);
-    }
-
-})
-
-let fileUpload = multer({storage: multerDiskStorage});
 
 //----------- user Controller require ------
 const users = require('../controllers/usersController');
-const e = require('express');
+
 
 /* GET users listing. */
 
 //----------- register -----------------
 router.get('/registro', users.register);
-router.post('/registro',fileUpload.single("avatar"),validations,users.save);
+router.post('/registro',multer.single("avatar"),validationsRegister,users.registrationProcess);
 
 
 //----------- login -----------------
 router.get('/iniciar-sesion', users.login);
+router.post('/iniciar-sesion',validationsLogin,users.loginProcess);
+
+
 router.get('/perfil', users.profile);
 
 
 router.get('/editar', users.edit);
 
 router.put('/perfil', users.update);
-router.post('/acceder', users.access);
+
 router.delete('/desactivar', users.delete);
 
 module.exports = router;

@@ -1,33 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const { send } = require('process');
-const bcryptjs = require('bcryptjs');
+
 const {validationResult} = require("express-validator")
 
 
 const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
-let maxId = 0;
-users.forEach(element => {
-	if(element.id > maxId){ 
-		maxId = element.id;
-	}
-});
-maxId++;
+const UserModel = require('../models/User');
 
 
 const usersController = {
-    login:(req,res)=>{
-        return res.render('users/login', {title : "Iniciar Sesión",stylesheet : "login.css"});
-    },
+    
     register:(req,res)=>{
         return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
     },
-    access: (req,res)=>{
-
-    },
-    save: (req,res)=>{
+    registrationProcess: (req,res)=>{
         
         const resultValidation = validationResult(req)
 
@@ -39,35 +28,49 @@ const usersController = {
                 oldData: req.body
             })
         }else{
+
+            if(req.body.password === req.body.passwordConfirmation){    
         
-        const passwordPlainText = req.body.password;
-        const passwordHash = bcryptjs.hashSync(passwordPlainText, 10);
+                UserModel.createUser(req.body,req.file)
+                return res.redirect("/productos");
 
-        const userToSave = {
-			"id": maxId,
-			"name": req.body.name,
-            "lastName": req.body.lastname,
-			"email":req.body.email,
-			"phone":req.body.phone,
-			"password": passwordHash,
-			"image": req.file.filename
-		}
+            }else{
+                    
+                return res.render('users/register', {title : "Registrarse", 
+                stylesheet: "register.css",
+                errors: resultValidation.mapped(), 
+                oldData: req.body}); 
+                }     
+        }
+    },
+    login:(req,res)=>{
+        return res.render('users/login', {title : "Iniciar Sesión",stylesheet : "login.css"});
+    },
+    loginProcess: (req,res)=>{
+        const resultValidation = validationResult(req)
 
-		
-        let confirmPassword = req.body.passwordConfirmation;
-        if(passwordPlainText == confirmPassword){
-            users.push(userToSave);
-            let userJson=JSON.stringify(users,null,2);
-            console.log(req.body);
-            fs.writeFileSync("./data/usersDataBase.json",userJson);
-    
-            return res.redirect("/productos");
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/Login', { 
+                title : "Iniciar sesión", 
+                stylesheet: "login.css",
+                errors: resultValidation.mapped(), 
+                oldData: req.body
+            })
         }else{
-            console.log("error al registrarse")
-            return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"}); 
-        }
-        }
 
+            const userLogin = users.find(user => user.id == req.params.id);
+
+            if (userLogin) {
+                
+            } else {
+                
+            }
+
+            return res.render('users/profile', { 
+                title : "Perfil", 
+                stylesheet: "login.css",
+            })
+        }
     },
     profile: (req,res)=>{
 
