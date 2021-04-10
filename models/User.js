@@ -22,6 +22,7 @@ const User = {
     },
 
     findByField: (field, text)=>{
+        
         let userFound = users.find(user => user[field] === text)
         return userFound
     },

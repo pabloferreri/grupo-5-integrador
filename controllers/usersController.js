@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { send } = require('process');
+const bcryptjs = require('bcryptjs');
 
 const {validationResult} = require("express-validator")
 
@@ -64,18 +65,42 @@ const usersController = {
             })
         }else{
 
-            const userLogin = users.find(user => user.id == req.params.id);
+            let userFoundDb = UserModel.findByField("email",req.body.email)
+           
 
-            if (userLogin) {
+            if (userFoundDb) {
+
+                let correctPassword = bcryptjs.compareSync(req.body.password, userFoundDb.password );
+                if(correctPassword){
+                    return res.render('users/profile', { 
+                        title : "Perfil", 
+                        stylesheet: "login.css",
+                    })
+                }else{
+                    return res.render('users/Login', { 
+                        title : "Iniciar sesión", 
+                        stylesheet: "login.css",
+                        errors: {
+                            password: {
+                                msg: 'El usuario o la contraseña son incorrectas.'
+                            }
+                        }, 
+                        oldData: req.body}); 
+                }
+                
+
                 
             } else {
-                
-            }
-
-            return res.render('users/profile', { 
-                title : "Perfil", 
+                return res.render('users/Login', { 
+                title : "Iniciar sesión", 
                 stylesheet: "login.css",
-            })
+                errors: {
+                    password: {
+                        msg: 'El usuario o la contraseña son incorrectas.'
+                    }
+                }, 
+                oldData: req.body}); 
+            }
         }
     },
     profile: (req,res)=>{
