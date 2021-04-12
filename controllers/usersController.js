@@ -74,7 +74,7 @@ const usersController = {
                 if(correctPassword){
                     return res.render('users/profile', { 
                         title : "Perfil", 
-                        stylesheet: "login.css",
+                        stylesheet: "profile.css",
                     })
                 }else{
                     return res.render('users/Login', { 
