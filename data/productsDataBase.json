@@ -3,8 +3,8 @@
     "id": 1,
     "name": "Gabinete Pc Gamer",
     "price": "50000",
-    "discount": "5",
-    "fees": "10",
+    "discount": 5,
+    "stock": 10,
     "category": "visited",
     "description": "Increíble Gabinete para terminar de completar tu Pc Gamer y jugar a todo lo que siempre soñaste.",
     "image": "gabinete.jpg"
@@ -13,8 +13,8 @@
     "id": 2,
     "name": "Mouse Gamer Pc",
     "price": "10000",
-    "discount": "20",
-    "fees": "10",
+    "discount": 20,
+    "stock": 10,
     "category": "visited",
     "description": "Increíble Mouse Gamer con sensores de última generación para que cada movimiento sea perfecto.",
     "image": "mouse.jpg"
@@ -23,8 +23,8 @@
     "id": 3,
     "name": "Auriculares Gamer",
     "price": "20000",
-    "discount": "30",
-    "fees": "10",
+    "discount": 30,
+    "stock": 10,
     "category": "visited",
     "description": "Increíbles Auriculares para disfrutar siempre del mejor sonido al jugar tu videojuegos favoritos.",
     "image": "auriculares.jpg"
@@ -33,8 +33,8 @@
     "id": 4,
     "name": "Teclado Gamer",
     "price": "15000",
-    "discount": "15",
-    "fees": "10",
+    "discount": 15,
+    "stock": 10,
     "category": "visited",
     "description": "Increíble Teclado Gamer con teclas de Alta Sensibilidad para conseguir la mejor experiencia.",
     "image": "teclado.jpg"
