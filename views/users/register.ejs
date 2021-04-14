@@ -98,7 +98,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password">
+                    <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password" id="password">
 
                 </div> 
 
@@ -112,9 +112,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation">
+                    <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation" id="passwordConfirmation">
 
                 </div> 
+                <script src="/javascript/JsFrontPassword.js"></script>
+                <input type="checkbox" id="ver" name="ver" onChange="verPassword()">Ver contraseña
 <!-- form-group// -->
 
                 <% if (locals.errors && errors.avatar) { %>
