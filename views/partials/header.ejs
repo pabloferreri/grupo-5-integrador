@@ -18,8 +18,13 @@
                 <a href="/productos"><li>Shop</li></a>
                 <a href="/categorias"><li>Categorias</li></a>
                 <a href="/nosotros"><li>Nosotros</li></a>
-                <a href="/usuarios/registro"><li>Registrarse</li></a>
-                <a href="/usuarios/iniciar-sesion"><li>Iniciar Sesión</li></a>
+                <% if (locals.isLogged) { %>
+                    <a href="/usuarios/perfil"><li>Su perfil</li></a>
+                    
+                <% } else {%>
+                    <a href="/usuarios/registro"><li>Registrarse</li></a>
+                    <a href="/usuarios/iniciar-sesion"><li>Iniciar Sesión</li></a>
+                <% } %>
                 <a href="/carrito"><li><i class="fas fa-shopping-cart"></i></li></a>
             </ul>
         </div>

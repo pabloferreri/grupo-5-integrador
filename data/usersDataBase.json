@@ -16,5 +16,14 @@
     "phone": "22222",
     "password": "$2a$10$hpqjzi6lxHota4KQjb2wgus/2lsWZSWOi5Flamc/tWJfMkHEdYriW",
     "image": "1618079666780_img.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pablo",
+    "lastName": "Ferreri",
+    "email": "pablo.ferreri.1991.pf@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$kvjdRMAoIMCxnGfo6l5NoenZat69V4yAV0r1bYoWruSbLiFf5eLt.",
+    "image": "1618266551193_img.jpg"
   }
 ]

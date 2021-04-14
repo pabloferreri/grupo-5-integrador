@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { send } = require('process');
 const bcryptjs = require('bcryptjs');
+const session = require('express-session');
 
 const {validationResult} = require("express-validator")
 
@@ -10,6 +11,7 @@ const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
 const UserModel = require('../models/User');
+const { userInfo } = require('os');
 
 
 const usersController = {
@@ -70,11 +72,15 @@ const usersController = {
 
             if (userFoundDb) {
 
-                let correctPassword = bcryptjs.compareSync(req.body.password, userFoundDb.password );
+                let correctPassword = bcryptjs.compareSync(req.body.password, userFoundDb.password);
                 if(correctPassword){
+                    delete userFoundDb.password;
+                    req.session.userLogged = userFoundDb;
+                    
                     return res.render('users/profile', { 
                         title : "Perfil", 
                         stylesheet: "profile.css",
+                        user: req.session.userLogged
                     })
                 }else{
                     return res.render('users/Login', { 
@@ -104,7 +110,11 @@ const usersController = {
         }
     },
     profile: (req,res)=>{
-
+        return res.render('users/profile', { 
+            title : "Perfil", 
+            stylesheet: "profile.css",
+            user: req.session.userLogged
+        })
     },
     edit: (req,res)=>{
 
@@ -115,6 +125,10 @@ const usersController = {
     delete: (req,res)=>{
         
     },
+    logout:(req,res)=>{
+        req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 module.exports = usersController;
