@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
 
     inputName.addEventListener('blur', function(){
         if(!isNaN(inputName.value)){
-            errors.push('error en el campo de nombre');
+            errors.push('Hay un error en el Nombre');
             inputName.style.border = "solid red 1px";
             
             alert('Uupss! Parece que se ha producido un error en el campo nombre');
@@ -20,7 +20,7 @@ window.addEventListener('load', function(){
     });
     inputApellido.addEventListener('blur', function(){
         if(!isNaN(inputApellido.value)){
-            errors.push('error en el campo de apellido');
+            errors.push('Hay un error en el Apellido');
             
             inputApellido.style.border = "solid red 1px";
             alert('Uupss! Parece que se ha producido un error en el campo apellido');
@@ -34,7 +34,7 @@ window.addEventListener('load', function(){
         emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
         //Se muestra un texto a modo de ejemplo, luego va a ser un icono
         if (!emailRegex.test(campo.value)) {
-            errors.push('error en el campo de email')
+            errors.push('Hay un error en el email')
             email.style.border = "solid red 1px";
             alert('Uupss! Parece que se ha producido un error en el campo email')
         }else{
@@ -44,7 +44,7 @@ window.addEventListener('load', function(){
 
     inputPhone.addEventListener('blur', function(){
         if(isNaN(inputPhone.value)){
-            errors.push('error en el campo de teléfono')
+            errors.push('Hay un error en el teléfono')
             inputPhone.style.border = "solid red 1px";
             
             alert('Uupss! Parece que se ha producido un error en el campo de teléfono, prueba sin espacios ni otro caracter')
@@ -56,7 +56,7 @@ window.addEventListener('load', function(){
 
     inputPassword.addEventListener('blur', function(){
         if(inputPassword.value.length <= 5){
-            errors.push('la contraseña debe tener un mínimo de 5 caracteres')
+            errors.push('Hay un error en la contraseña')
             inputPassword.style.border = "solid red 1px";
             alert('Uupss! Ten en cuenta que la contraseña debe tener un mínimo de 5 caracteres')
         }else{
@@ -64,9 +64,10 @@ window.addEventListener('load', function(){
         }
     });
 
+
     inputPassConfirmation.addEventListener('blur', function(){
         if(inputPassword.value != inputPassConfirmation.value){
-            errors.push('error las passwords no coinciden')
+            errors.push('Las contraseñas no coinciden')
             inputPassConfirmation.style.border = "solid red 1px";
             alert('Uupss! Parece que las contraseñas no coinciden')
         }else{
@@ -74,12 +75,15 @@ window.addEventListener('load', function(){
         }
     });
 
-    
 
     formulario.addEventListener('submit', function(event){
         if (errors.length > 0){
             event.preventDefault();
+            let erroresTxt = document.querySelector('.errores-txt');
+            erroresTxt.innerHTML = 'Hemos encontrado errores en los siguientes campos:'
+            let ulErrores = document.querySelector('.errores ul');
+            errors.forEach(error => ulErrores.innerHTML += `<li>${error}</li>`)
+            ulErrores.style.color = 'red'
         }
-        alert('Uupss! Parcere que ha habido un error en los siguientes campos: ' + errors)
     })
 })
