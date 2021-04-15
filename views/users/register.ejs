@@ -22,20 +22,20 @@
             </p>
 	        <form action="/usuarios/registro" method="POST" enctype="multipart/form-data" id="formRegister">
 
-               
-	            <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.name? 'is-invalid':null %>" placeholder="Nombre" type="text" name="name" id="name"  value="<%= locals.oldData? oldData.name : null%>">
-                
-                </div> 
-
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                      <%= errors.name.msg %> 
                     </div>
                    <% } %>
+                
+	            <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.name? 'is-invalid':null %>" placeholder="Nombre" type="text" name="name" id="name"  value="<%= locals.oldData? oldData.name : null%>">
+                    <small id="error-name" class="errorsSmall"></small>
+                </div> 
+
                 
                 <% if (locals.errors && errors.lastname) { %>
                     <div class="text-danger">
@@ -49,7 +49,7 @@
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
                     <input  class="form-control <%= locals.errors && errors.lastname? 'is-invalid':null %>" placeholder="Apellido" type="text" id="lastname" name="lastname"  value="<%= locals.oldData? oldData.lastname : null%>">
-
+                    <small id="error-lastname" class="errorsSmall"></small>
                 </div> 
 
                 
@@ -66,7 +66,7 @@
 		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
                     </div>
                     <input  class="form-control <%= locals.errors && errors.email? 'is-invalid':null %>" placeholder="ejemplo@email.com" type="email" id="email" name="email"  value="<%= locals.oldData? oldData.email : null%>">         
-
+                    <small id="error-email" class="errorsSmall"></small>
                 </div> 
 <!-- form-group// -->
 
@@ -83,6 +83,7 @@
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
     	            <input  class="form-control <%= locals.errors && errors.phone? 'is-invalid':null %>" placeholder="Telefono" type="text" name="phone" id="phone"  value="<%= locals.oldData? oldData.phone : null%>">
+                    <small id="error-phone" class="errorsSmall"></small>
                  </div> 
 
                 
@@ -99,7 +100,7 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password" id="password" >
-
+                    <small id="error-password" class="errorsSmall"></small>
                 </div> 
 
                 <% if (locals.errors && errors.passwordConfirmation) { %>
@@ -113,8 +114,9 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation" id="passwordConfirmation" >
-
+                    <small id="error-confirmPassword" class="errorsSmall"></small>
                 </div> 
+
                 <input type="checkbox" id="ver" name="ver" onChange="verPassword()">Ver contraseña
                 <script src="/javascript/JsFrontPassword.js"></script>
 <!-- form-group// -->
