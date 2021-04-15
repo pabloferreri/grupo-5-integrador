@@ -15,7 +15,7 @@ const validations = [
         .notEmpty().withMessage("Las contraseñas no coinciden"),
     body('avatar').custom((value,{req})=>{
         let file = req.file;
-        let extensions = ['.jpg','.png','.gif'];
+        let extensions = ['.jpg','.png','.gif', 'svg', 'jpeg'];
         if(!file){
             throw new Error('Tienes que introducir una imagen');
         }else{
