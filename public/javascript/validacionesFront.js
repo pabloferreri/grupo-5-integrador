@@ -15,11 +15,17 @@ window.addEventListener('load', function(){
             let nameError = document.querySelector('#error-name');
             nameError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo nombre';
             nameError.style.color = 'red';
-        }else{
+        }else if(isNaN(inputName.value)) {
             let nameError = document.querySelector('#error-name');
             inputName.style.border = "solid green 1px";
             nameError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Hay un error en el Nombre' });
+            errors = errors.filter(function(i) { return i !== 'Campo de nombre vacío' });
+        }else if(inputName.value == null){
+            let nameError = document.querySelector('#error-name');
+            nameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
+            lastnameErrornameError.style.color = 'red';
+            errors.push('Campo de nombre vacío')
         }
     });
     inputApellido.addEventListener('blur', function(){
@@ -29,11 +35,18 @@ window.addEventListener('load', function(){
             lastnameError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo apellido';
             lastnameError.style.color = 'red';
             inputApellido.style.border = "solid red 1px";
-        }else{
+        }else if(isNaN(inputApellido.value)) {
             let lastnameError = document.querySelector('#error-lastname');
             inputApellido.style.border = "solid green 1px";
             lastnameError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Hay un error en el Apellido' });
+            errors = errors.filter(function(i) { return i !== 'Campo de apellido vacío' });
+
+        }else if(inputApellido.value == null){
+            let lastnameError = document.querySelector('#error-lastname');
+            lastnameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
+            lastnameError.style.color = 'red';
+            errors.push('Campo de apellido vacío')
         }
     });
 
@@ -47,11 +60,18 @@ window.addEventListener('load', function(){
             let emailError = document.querySelector('#error-email');
             emailError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo email';
             emailError.style.color = 'red';
-        }else{
+        }else if(emailRegex.test(campo.value)) {
             let emailError = document.querySelector('#error-email');
             email.style.border = "solid green 1px";
             emailError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Hay un error en el email' });
+            errors = errors.filter(function(i) { return i !== 'Campo de email vacío' });
+
+        }else if(email.value == null){
+            let emailError = document.querySelector('#error-email');
+            emailError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
+            emailError.style.color = 'red';
+            errors.push('Campo de email vacío')
         }
     });
 
@@ -62,11 +82,18 @@ window.addEventListener('load', function(){
             let phoneError = document.querySelector('#error-phone');
             phoneError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo de teléfono, prueba sin espacios ni otro caracter';
             phoneError.style.color = 'red';
-        }else{
+        }else if(!isNaN(inputPhone.value) && inputPhone.value != null) {
             inputPhone.style.border = "solid green 1px";
             let phoneError = document.querySelector('#error-phone');
             phoneError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Hay un error en el teléfono' });
+            errors = errors.filter(function(i) { return i !== 'Campo de teléfono vacío' });
+
+        }else if(inputPhone.value == null){
+            let phoneError = document.querySelector('#error-phone');
+            phoneError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
+            phoneError.style.color = 'red';
+            errors.push('Campo de teléfono vacío')
         }
     });
 
@@ -77,7 +104,7 @@ window.addEventListener('load', function(){
             let passwordError = document.querySelector('#error-password');
             passwordError.innerHTML  = 'Uupss! Ten en cuenta que la contraseña debe tener un mínimo de 5 caracteres';
             passwordError.style.color = 'red';
-        }else{
+        }else if(inputPassword.value.length != null) {
             let passwordError = document.querySelector('#error-password');
             inputPassword.style.border = "solid green 1px";
             passwordError.innerHTML  = '';
@@ -93,11 +120,18 @@ window.addEventListener('load', function(){
             let passwordConfirmError = document.querySelector('#error-confirmPassword');
             passwordConfirmError.innerHTML  = 'Uupss! Al parecer las contraseñas no coinciden, puedes revisar que escribiste apretando abajo';
             passwordConfirmError.style.color = 'red';
-        }else{
+        }else if(inputPassword.value == inputPassConfirmation.value) {
             let passwordConfirmError = document.querySelector('#error-confirmPassword');
             inputPassConfirmation.style.border = "solid green 1px";
             passwordConfirmError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Las contraseñas no coinciden' });
+            errors = errors.filter(function(i) { return i !== 'Campo de password confirmation vacío' });
+
+        }else if(inputPassConfirmation.value == null){
+            let passwordConfirmError = document.querySelector('#error-confirmPassword');
+            passwordConfirmError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
+            passwordConfirmError.style.color = 'red';
+            errors.push('Campo de password confirmation vacío')
         }
     });
 
@@ -116,6 +150,7 @@ window.addEventListener('load', function(){
             let ulErrores = document.querySelector('.errores ul');
             uniqueArrayErrors.forEach(error => ulErrores.innerHTML += `<li>${error}</li>`)
             ulErrores.style.color = 'red'
+            errors = []
         }
     })
 })
