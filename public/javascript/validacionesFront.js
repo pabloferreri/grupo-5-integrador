@@ -53,6 +53,17 @@ window.addEventListener('load', function(){
             
         }
     });
+
+    inputPassword.addEventListener('blur', function(){
+        if(inputPassword.value.length <= 5){
+            errors.push('la contraseña debe tener un mínimo de 5 caracteres')
+            inputPassword.style.border = "solid red 1px";
+            alert('Uupss! Ten en cuenta que la contraseña debe tener un mínimo de 5 caracteres')
+        }else{
+            inputPassword.style.border = "solid green 1px";
+        }
+    });
+
     inputPassConfirmation.addEventListener('blur', function(){
         if(inputPassword.value != inputPassConfirmation.value){
             errors.push('error las passwords no coinciden')
