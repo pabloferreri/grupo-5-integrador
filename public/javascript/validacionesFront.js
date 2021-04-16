@@ -21,7 +21,7 @@ window.addEventListener('load', function(){
             nameError.innerHTML  = '';
             errors = errors.filter(function(i) { return i !== 'Hay un error en el Nombre' });
             errors = errors.filter(function(i) { return i !== 'Campo de nombre vacío' });
-        }else if(inputName.value == null){
+        }else if(inputName.value == null || inputName.value.length < 2){
             let nameError = document.querySelector('#error-name');
             nameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
             lastnameErrornameError.style.color = 'red';
@@ -42,7 +42,7 @@ window.addEventListener('load', function(){
             errors = errors.filter(function(i) { return i !== 'Hay un error en el Apellido' });
             errors = errors.filter(function(i) { return i !== 'Campo de apellido vacío' });
 
-        }else if(inputApellido.value == null){
+        }else if(inputApellido.value == null || inputApellido.value < 2){
             let lastnameError = document.querySelector('#error-lastname');
             lastnameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
             lastnameError.style.color = 'red';
@@ -98,7 +98,7 @@ window.addEventListener('load', function(){
     });
 
     inputPassword.addEventListener('blur', function(){
-        if(inputPassword.value.length < 4){
+        if(inputPassword.value.length < 8){
             errors.push('Hay un error en la contraseña')
             inputPassword.style.border = "solid red 1px";
             let passwordError = document.querySelector('#error-password');
