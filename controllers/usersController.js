@@ -32,8 +32,6 @@ const usersController = {
             })
         }
         
-        let userFoundDb = UserModel.findByPk("email",req.body.email)
-        
 
         if(req.body.password === req.body.passwordConfirmation){    
         

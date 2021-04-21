@@ -10,7 +10,7 @@ const logRegMiddleware = require('../middlewares/logRegMiddleware');
 
 
 //----------- multer require ------------------
-const multer = require('../middlewares/multerMiddleware')
+const multer = require('../middlewares/multerAvatarMiddleware')
 
 
 

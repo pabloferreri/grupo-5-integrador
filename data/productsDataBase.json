@@ -38,5 +38,14 @@
     "category": "visited",
     "description": "Increíble Teclado Gamer con teclas de Alta Sensibilidad para conseguir la mejor experiencia.",
     "image": "teclado.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Zapatillas Rebook",
+    "price": "2000",
+    "discount": "10",
+    "category": "In-sale",
+    "description": "zasas",
+    "image": "1618972850543_img.jpg"
   }
 ]

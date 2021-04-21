@@ -4,7 +4,7 @@ const path = require('path');
 
 
 //----------- multer require ------------------
-const multer = require('../middlewares/multerMiddleware')
+const multer = require('../middlewares/multerProductMiddelware')
 
 //----------- product Controller require ------
 const productsController = require('../controllers/productsController');
