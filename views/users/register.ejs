@@ -52,6 +52,60 @@
                     <small id="error-lastname" class="errorsSmall"></small>
                 </div> 
 
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.address? 'is-invalid':null %>" placeholder="Dirección" type="text" id="address" name="address"  value="<%= locals.oldData? oldData.address : null%>">
+                    <small id="error-address" class="errorsSmall"></small>
+                </div> 
+
+
+
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.number? 'is-invalid':null %>" placeholder="Número" type="number" id="number" name="number"  value="<%= locals.oldData? oldData.number : null%>">
+                    <small id="error-number" class="errorsSmall"></small>
+                </div> 
+
+
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.city? 'is-invalid':null %>" placeholder="Ciudad" type="text" id="city" name="city"  value="<%= locals.oldData? oldData.city : null%>">
+                    <small id="error-city" class="errorsSmall"></small>
+                </div> 
+
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.zipCode? 'is-invalid':null %>" placeholder="Código postal" type="text" id="zipCode" name="zipCode"  value="<%= locals.oldData? oldData.zipCode : null%>">
+                    <small id="error-zipCode" class="errorsSmall"></small>
+                </div> 
+
+
+
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.province? 'is-invalid':null %>" placeholder="Provincia" type="text" id="province" name="province"  value="<%= locals.oldData? oldData.province : null%>">
+                    <small id="error-province" class="errorsSmall"></small>
+                </div> 
+
+
+                <div class="form-group input-group">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
+		            </div>
+                    <input  class="form-control <%= locals.errors && errors.country? 'is-invalid':null %>" placeholder="País" type="text" id="country" name="country"  value="<%= locals.oldData? oldData.country : null%>">
+                    <small id="error-country" class="errorsSmall"></small>
+                </div> 
+
                 
 <!-- form-group// -->
 

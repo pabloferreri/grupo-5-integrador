@@ -69,7 +69,10 @@ const productsController = {
 		res.redirect("/");
 	},
 	detail : (req, res) => {
+
+		console.log(req.params.id);
 		const product = ProductModel.findByPk(req.params.id);
+		console.log(product);
 		
 		if (product) {
 			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})

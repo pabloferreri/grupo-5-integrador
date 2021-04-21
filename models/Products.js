@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { parse } = require('path');
 const path = require('path');
 
 
@@ -30,11 +31,14 @@ const product = {
 
     createProduct: function (data,file) {
 
+        const price = parseInt(data.price);
+        const discount = parseInt(data.discount);
+
         const productToStore = {
 			"id": maxId,
 			"name": data.name,
-			"price":data.price,
-			"discount":data.discount,
+			"price": price,
+			"discount": discount,
 			"category":data.category,
 			"description":data.description,
 			"image": file.filename,
