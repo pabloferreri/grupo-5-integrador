@@ -19,16 +19,7 @@ const productsController = {
     index : function(req,res) {
         return res.render('products/product-list',{products: products, title : "Productos", stylesheet: 'product-list.css'})
     },
-    detail : (req, res) => {
-		const product = ProductModel.findByPk(req.params.id);
-		
-		if (product) {
-			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
-		}else{
-			return res.send("error");
-		}
-		
-    },
+    
     create: (req,res)=>{
         return res.render('products/crear-producto',{title: "Crear Producto", stylesheet: "crear-producto.css"});
     },
@@ -45,7 +36,8 @@ const productsController = {
     
 	edit: (req, res) => {
 		
-		let product=products.find(product=>(product.id==req.params.id));
+		let product=ProductModel.findByPk(req.params.id);
+	
 
 		return res.render("products/edit-product", {product: product, title: "Editar producto", stylesheet: "edit-product.css"})
 	},
@@ -53,7 +45,7 @@ const productsController = {
 
 		console.log(req.body);
 		
-		let productToEdit=products.find(product=>(product.id==req.params.id));
+		let productToEdit=ProductModel.findByPk(req.params.id);
 
 		console.log(req.file)
 
@@ -76,18 +68,20 @@ const productsController = {
 
 		res.redirect("/");
 	},
+	detail : (req, res) => {
+		const product = ProductModel.findByPk(req.params.id);
+		
+		if (product) {
+			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
+		}else{
+			return res.send("error");
+		}
+		
+    },
 	delete: (req,res) => {
-		console.log(req.params.id);
+		ProductModel.delete(req.params.id)
 
-
-		let leftProducts = products.filter(oneProduct => oneProduct.id != req.params.id);
-
-		console.log(leftProducts);
-
-		let productJson = JSON.stringify(leftProducts, null, 2);
-		fs.writeFileSync('./data/productsDataBase.json', productJson);
-
-		return res.redirect('/')
+		return res.redirect('/');
 	}
 }
 

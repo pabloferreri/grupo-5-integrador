@@ -16,8 +16,10 @@ maxId++;
 const product = {
 
     findByPk: (id)=>{
-        let productFound = products.find(product => product.id === id)
-        return productFound
+        console.log(id);
+        let productFound = products.find(product => product.id == id);
+        console.log(productFound);
+        return productFound;
     },
 
     findByField: (field, text)=>{
@@ -35,7 +37,7 @@ const product = {
 			"discount":data.discount,
 			"category":data.category,
 			"description":data.description,
-			"image": file.filename
+			"image": file.filename,
 		}
 
         
@@ -47,8 +49,9 @@ const product = {
     },
 
     delete: (id)=>{
-        let productToSave = products.filter(product => product.id !== id)
-        let productJson=JSON.stringify(productToSave,null,2);
+        
+        let leftProducts = products.filter(product => product.id != id)
+        let productJson=JSON.stringify(leftProducts,null,2);
         fs.writeFileSync("./data/productsDataBase.json",productJson);
         return true;
     }
