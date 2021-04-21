@@ -2,8 +2,22 @@ const { body } = require("express-validator");
 const path = require("path");
 
 const validations = [
-    body("name").notEmpty().withMessage("Ingrese su nombre"),
-    body("lastname").notEmpty().withMessage("Ingrese su apellido"),
+    body("name")
+        .notEmpty().withMessage("Ingrese su nombre"),
+    body("lastname")
+        .notEmpty().withMessage("Ingrese su apellido"),
+    body("address")
+        .notEmpty().withMessage("Ingrese la calle de su domicilio"),
+    body("number")
+        .notEmpty().withMessage("Ingrese el numero de su domicilio"),
+    body("city")
+        .notEmpty().withMessage("Ingrese la ciudad donde vive"),
+    body("zipCode")
+        .notEmpty().withMessage("Ingrese el codigo postal de su domicilio"),
+    body("province")
+        .notEmpty().withMessage("Ingrese la provincia donde vive"),
+    body("country")
+        .notEmpty().withMessage("Ingrese el pais donde vive"),
     body("email")
         .notEmpty().withMessage("Ingrese un email válido").bail()
         .isEmail().withMessage('El formato del email ingresado no es válido'),

@@ -3,6 +3,12 @@ window.addEventListener('load', function(){
     let formulario = document.querySelector('#formRegister')
     let inputName = document.querySelector('#name');
     let inputApellido = document.querySelector('#lastname');
+    let inputAddress = document.querySelector('#address');
+    let inputNumber = document.querySelector('#number');
+    let inputCity = document.querySelector('#city');
+    let inputZipCode = document.querySelector('#zipCode');
+    let inputProvince = document.querySelector('#province');
+    let inputCountry = document.querySelector('#country');
     let inputPhone = document.querySelector('#phone');
     let inputPassword = document.querySelector('#password');
     let inputPassConfirmation = document.querySelector('#passwordConfirmation');
