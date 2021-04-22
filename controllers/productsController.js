@@ -1,10 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const { title } = require('process');
-const ProductModel = require("../models/Products");
+/* const ProductModel = require("../models/Products"); */
+const db = require('../database/models');
+const { includes } = require('../middlewares/validationsRegisterMiddleware');
+const Product = db.product;
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+/* const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
 let maxId = 0;
 products.forEach(element => {
@@ -16,7 +19,8 @@ maxId++;
 
 
 const productsController = {
-    index : function(req,res) {
+    index : async function(req,res) {
+		let products = await Product.findAll({include:["categories","images"]}); 
         return res.render('products/product-list',{products: products, title : "Productos", stylesheet: 'product-list.css'})
     },
     

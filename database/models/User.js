@@ -1,49 +1,32 @@
-module.exports = function (sequelize,dataTypes) {
-
-    let alias = "Usuario";
-
-    let cols = {
-        id:{
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement:true,
-        },
-        userName:{
-            type: dataTypes.STRING,
-        },
-        userLastName:{
-            type: dataTypes.STRING,
-        },
-        email:{
-            type: dataTypes.STRING,
-        },
-        phone:{
-            type: dataTypes.INTEGER,
-        },
-        addressId:{
-            type: dataTypes.INTEGER,
-        },
-        password:{
-            type: dataTypes.STRING,
-        },
-        avatarId:{
-            type: dataTypes.INTEGER,
-        }
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-
-    let config = {
-        tableName: "users",
-        timestamps:false
-    }
-    
-    let Users = sequelize.define(alias,cols,config);
-
-    Users.associate = function (models) {
-        Users.belongsTo(models.Domicilio,{
-            as: "domicilio",
-            foreignKey:"addressId" 
-        })
-    }
-
-    return Users;
-}
+  };
+  User.init({
+    name: DataTypes.STRING,
+    lastname: DataTypes.STRING,
+    street: DataTypes.STRING,
+    number: DataTypes.INTEGER,
+    city_id: DataTypes.INTEGER,
+    email: DataTypes.STRING,
+    phone: DataTypes.INTEGER,
+    password: DataTypes.STRING,
+    avartar: DataTypes.STRING,
+    isAdmin: DataTypes.BOOLEAN
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+  return User;
+};

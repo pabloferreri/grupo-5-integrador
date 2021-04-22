@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Pablo",
+    "lastName": "Ferreri",
+    "address": "olazabal ",
+    "number": "1176",
+    "city": "Mar Del plata",
+    "zipCode": "7600",
+    "province": "Córdoba",
+    "country": "Argentina",
+    "email": "pablo.ferreri.1991.pf@gmail.com",
+    "phone": "222222",
+    "password": "$2a$10$eguxpoCdcdbk8YmWkDh07erFBMTDQRHzvF5ClfmeIOw4Rd./2aZki",
+    "image": "1619109308647_img.jpg"
+  }
+]
