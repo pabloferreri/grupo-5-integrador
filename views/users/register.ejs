@@ -21,186 +21,155 @@
                 <span class="bg-light"></span>
             </p>
 	        <form action="/usuarios/registro" method="POST" enctype="multipart/form-data" id="formRegister">
-
+<!-- form-group// -->
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                      <%= errors.name.msg %> 
                     </div>
                    <% } %>
-                
 	            <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input  class="form-control <%= locals.errors && errors.name? 'is-invalid':null %>" placeholder="Nombre" type="text" name="name" id="name"  value="<%= locals.oldData? oldData.name : null%>">
-                    <small id="error-name" class="errorsSmall"></small>
+                    <input  class="form-control <%= locals.errors && errors.name? 'is-invalid':null %>" placeholder="Nombre" type="text" name="name" id="name"  value="<%= locals.oldData? oldData.name : null%>"> <br>
+                    <p class="errormsg" id="error-msg-name"><small>Nombre invalido</small></p>
                 </div> 
-
-                
+<!-- form-group// -->
                 <% if (locals.errors && errors.lastname) { %>
                     <div class="text-danger">
                      <%= errors.lastname.msg %> 
                     </div>
                    <% } %>
-
-
                 <div class="form-group input-group">
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input  class="form-control <%= locals.errors && errors.lastname? 'is-invalid':null %>" placeholder="Apellido" type="text" id="lastname" name="lastname"  value="<%= locals.oldData? oldData.lastname : null%>">
-                    <small id="error-lastname" class="errorsSmall"></small>
-                </div> 
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.address? 'is-invalid':null %>" placeholder="Dirección" type="text" id="address" name="address"  value="<%= locals.oldData? oldData.address : null%>">
-                    <small id="error-address" class="errorsSmall"></small>
-                </div> 
-
-
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.number? 'is-invalid':null %>" placeholder="Número" type="number" id="number" name="number"  value="<%= locals.oldData? oldData.number : null%>">
-                    <small id="error-number" class="errorsSmall"></small>
-                </div> 
-
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.city? 'is-invalid':null %>" placeholder="Ciudad" type="text" id="city" name="city"  value="<%= locals.oldData? oldData.city : null%>">
-                    <small id="error-city" class="errorsSmall"></small>
-                </div> 
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.zipCode? 'is-invalid':null %>" placeholder="Código postal" type="text" id="zipCode" name="zipCode"  value="<%= locals.oldData? oldData.zipCode : null%>">
-                    <small id="error-zipCode" class="errorsSmall"></small>
-                </div> 
-
-
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.province? 'is-invalid':null %>" placeholder="Provincia" type="text" id="province" name="province"  value="<%= locals.oldData? oldData.province : null%>">
-                    <small id="error-province" class="errorsSmall"></small>
-                </div> 
-
-
-                <div class="form-group input-group">
-		            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
-		            </div>
-                    <input  class="form-control <%= locals.errors && errors.country? 'is-invalid':null %>" placeholder="País" type="text" id="country" name="country"  value="<%= locals.oldData? oldData.country : null%>">
-                    <small id="error-country" class="errorsSmall"></small>
-                </div> 
-
-                
+                    <input  class="form-control <%= locals.errors && errors.lastname? 'is-invalid':null %>" placeholder="Apellido" type="text" id="lastname" name="lastname"  value="<%= locals.oldData? oldData.lastname : null%>"> <br>
+                    <p class="errormsg" id="error-msg-lastname"><small>Apellido invalido</small></p>
+                </div>   
 <!-- form-group// -->
-
-                <% if (locals.errors && errors.email) { %>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.address? 'is-invalid':null %>" placeholder="Dirección" type="text" id="address" name="address"  value="<%= locals.oldData? oldData.address : null%>">
+                    <p class="errormsg" id="error-msg-direccion"><small>Introduce la calle sin números</small></p>
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.number? 'is-invalid':null %>" placeholder="Número" type="number" id="number" name="number"  min="1" value="<%= locals.oldData? oldData.number : null%>">
+                    <p class="errormsg" id="error-msg-direccionNumber"><small>Introduce el número de tu Dirección</small></p>
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.city? 'is-invalid':null %>" placeholder="Ciudad" type="text" id="city" name="city"  value="<%= locals.oldData? oldData.city : null%>">
+                    <p class="errormsg" id="error-msg-ciudad"><small>Introduce tu ciudad</small></p>
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.zipCode? 'is-invalid':null %>" placeholder="Código postal" type="text" id="zipCode" name="zipCode"  value="<%= locals.oldData? oldData.zipCode : null%>">
+                    <p class="errormsg" id="error-msg-zipCode"><small>Introduce tu código postal</small></p>
+                </div>
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.province? 'is-invalid':null %>" placeholder="Provincia" type="text" id="province" name="province"  value="<%= locals.oldData? oldData.province : null%>">
+                    <p class="errormsg" id="error-msg-province"><small>Introduce tu Provincia</small></p>
+                </div> 
+<!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-globe-americas"></i></span>
+                    </div>
+                    <input  class="form-control <%= locals.errors && errors.country? 'is-invalid':null %>" placeholder="País" type="text" id="country" name="country"  value="<%= locals.oldData? oldData.country : null%>">
+                    <p class="errormsg" id="error-msg-pais"><small>Introduce tu País</small></p>
+                </div> 
+<!-- form-group// -->
+                 <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
                 <%= errors.email.msg %> 
                 </div>
                 <% } %>
-
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
-		                <span class="input-group-text"> <i class="fa fa-envelope"></i></span>
+		                <span class="input-group-text"> <i class="fas fa-at"></i></span>
                     </div>
-                    <input  class="form-control <%= locals.errors && errors.email? 'is-invalid':null %>" placeholder="ejemplo@email.com" type="email" id="email" name="email"  value="<%= locals.oldData? oldData.email : null%>">         
-                    <small id="error-email" class="errorsSmall"></small>
+                    <input  class="form-control <%= locals.errors && errors.email? 'is-invalid':null %>" placeholder="Correo Electronico" type="email" id="email" name="email"  value="<%= locals.oldData? oldData.email : null%>">   <br>      
+                    <p class="errormsg" id="error-msg-mail"><small>Compruebe la estructura del email</small></p>
                 </div> 
 <!-- form-group// -->
-
                 <% if (locals.errors && errors.phone) { %>
                     <div class="text-danger">
                      <%= errors.phone.msg %> 
                     </div>
                    <% } %>
-
-                
-
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		            </div>
-    	            <input  class="form-control <%= locals.errors && errors.phone? 'is-invalid':null %>" placeholder="Telefono" type="text" name="phone" id="phone"  value="<%= locals.oldData? oldData.phone : null%>">
-                    <small id="error-phone" class="errorsSmall"></small>
-                 </div> 
-
-                
+    	            <input  class="form-control <%= locals.errors && errors.phone? 'is-invalid':null %>" placeholder="Telefono" type="text" name="phone" id="phone"  value="<%= locals.oldData? oldData.phone : null%>"> <br>
+                    <p class="errormsg" id="error-msg-phone"><small>Introduzca números sin espacios ni caracteres especiales</small></p>
+                 </div>       
 <!-- form-group// -->
-
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
                     <%= errors.password.msg %> 
                     </div>
                 <% } %>
-
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password" id="password" >
-                    <small id="error-password" class="errorsSmall"></small>
+                    <input class="form-control <%= locals.errors && errors.password ? 'is-invalid':null %>" placeholder="Crear contraseña" type="password" name="password" id="password" > <br>
+                    <p class="errormsg" id="error-msg-pass"><small>La contraseña debe contar con un mínimo de 5 caracteres</small></p>
                 </div> 
-
+<!-- form-group// -->
                 <% if (locals.errors && errors.passwordConfirmation) { %>
                     <div class="text-danger">
                     <%= errors.passwordConfirmation.msg %> 
                     </div>
                 <% } %>
-
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation" id="passwordConfirmation" >
-                    <small id="error-confirmPassword" class="errorsSmall"></small>
+                    <input class="form-control <%= locals.errors && errors.passwordConfirmation? 'is-invalid':null %>" placeholder="Reescriba su contraseña" type="password" name="passwordConfirmation" id="passwordConfirmation" > <br>
+                    <p class="errormsg" id="error-msg-passconfirm"><small>Las contraseñas no coinciden</small></p>
                 </div> 
-
                 <input type="checkbox" id="ver" name="ver" onChange="verPassword()">Ver contraseña
-                <script src="/javascripts/JsFrontPassword.js"></script>
+                <script src="/js/JsFrontPassword.js"></script>
 <!-- form-group// -->
-
                 <% if (locals.errors && errors.avatar) { %>
                     <div class="text-danger">
                     <%= errors.avatar.msg %> 
                     </div>
                 <% } %>
-
                 <div class="form-group input-group">
     	            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fas fa-portrait"></i> </span>
 		            </div>
     	            <input  class="form-control <%= locals.errors && errors.avatar? 'is-invalid':null %> " type="file" name="avatar" id="avatar">
-
                 </div> 
 
-                <script src="/javascript/validacionesFront.js"></script>
-                <section class="errores">
-                    <div class="errores-txt"></div>
-                    <ul>
 
-                    </ul>
-                </section>
-<!-- form-group// -->                                      
+                <div class="errormsg" id="msgErrorEnd">Comprueba que todos los campos esten correctos</div>
+                <script src="/js/validacionesFront.js"></script>
+                                     
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block" value="Enviar"> Crear Cuenta  </button>
                 </div> 
-<!-- form-group// -->      
+     
                 <p class="text-center">¿Ya tiene una cuenta? <a href="/usuarios/iniciar-sesion">Ingresar</a></p>                                                                 
             </form>
         </article>

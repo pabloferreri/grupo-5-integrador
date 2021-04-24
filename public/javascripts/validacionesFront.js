@@ -3,10 +3,10 @@ window.addEventListener('load', function(){
     let formulario = document.querySelector('#formRegister')
     let inputName = document.querySelector('#name');
     let inputApellido = document.querySelector('#lastname');
-    let inputAddress = document.querySelector('#address');
-    let inputNumber = document.querySelector('#number');
-    let inputCity = document.querySelector('#city');
-    let inputZipCode = document.querySelector('#zipCode');
+    let inputDireccion = document.querySelector('#address');
+    let inputDireccionNumber = document.querySelector('#number');
+    let inputCiudad = document.querySelector('#city');
+    let inputZip = document.querySelector('#zipCode');
     let inputProvince = document.querySelector('#province');
     let inputCountry = document.querySelector('#country');
     let inputPhone = document.querySelector('#phone');
@@ -14,149 +14,157 @@ window.addEventListener('load', function(){
     let inputPassConfirmation = document.querySelector('#passwordConfirmation');
     let errors = [];
 
+//Validaciones:
+
+    //Campo Name
     inputName.addEventListener('blur', function(){
         if(!isNaN(inputName.value)){
             errors.push('Hay un error en el Nombre');
             inputName.style.border = "solid red 1px";
-            let nameError = document.querySelector('#error-name');
-            nameError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo nombre';
-            nameError.style.color = 'red';
-        }else if(isNaN(inputName.value)) {
-            let nameError = document.querySelector('#error-name');
+            inputName.style.width = '80%'
+            document.getElementById('error-msg-name').style.display = "block"
+        }else{
             inputName.style.border = "solid green 1px";
-            nameError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Hay un error en el Nombre' });
-            errors = errors.filter(function(i) { return i !== 'Campo de nombre vacío' });
-        }else if(inputName.value == null || inputName.value.length < 2){
-            let nameError = document.querySelector('#error-name');
-            nameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
-            lastnameErrornameError.style.color = 'red';
-            errors.push('Campo de nombre vacío')
+            document.getElementById('error-msg-name').style.display = "none"
         }
     });
+    //Campo Apellido
     inputApellido.addEventListener('blur', function(){
         if(!isNaN(inputApellido.value)){
             errors.push('Hay un error en el Apellido');
-            let lastnameError = document.querySelector('#error-lastname');
-            lastnameError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo apellido';
-            lastnameError.style.color = 'red';
+            inputApellido.style.width = '80%'
             inputApellido.style.border = "solid red 1px";
-        }else if(isNaN(inputApellido.value)) {
-            let lastnameError = document.querySelector('#error-lastname');
+            document.getElementById('error-msg-lastname').style.display = "block"
+        }else{
             inputApellido.style.border = "solid green 1px";
-            lastnameError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Hay un error en el Apellido' });
-            errors = errors.filter(function(i) { return i !== 'Campo de apellido vacío' });
-
-        }else if(inputApellido.value == null || inputApellido.value < 2){
-            let lastnameError = document.querySelector('#error-lastname');
-            lastnameError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
-            lastnameError.style.color = 'red';
-            errors.push('Campo de apellido vacío')
+            document.getElementById('error-msg-lastname').style.display = "none"
         }
     });
-
+    //Campo Dirección
+    inputDireccion.addEventListener('blur', function(){
+        if(!isNaN(inputDireccion.value)){
+            errors.push('Hay un error en la dirección');
+            inputDireccion.style.width = '80%'
+            inputDireccion.style.border = "solid red 1px";
+            document.getElementById('error-msg-direccion').style.display = "block"
+        }else{
+            inputDireccion.style.border = "solid green 1px";
+            document.getElementById('error-msg-direccion').style.display = "none"
+        }
+    })
+    //Campo Número Dirección
+    inputDireccionNumber.onkeydown = function(e) {
+        if(!((e.keyCode > 95 && e.keyCode < 106)
+          || (e.keyCode > 47 && e.keyCode < 58) 
+          || e.keyCode == 8)) {
+            return false;
+        }
+    }
+    //Campo Ciudad
+    inputCiudad.addEventListener('blur', function(){
+        if(!isNaN(inputCiudad.value)){
+            errors.push('Hay un error en la ciudad');
+            inputCiudad.style.width = '80%'
+            inputCiudad.style.border = "solid red 1px";
+            document.getElementById('error-msg-ciudad').style.display = "block"
+        }else{
+            inputCiudad.style.border = "solid green 1px";
+            document.getElementById('error-msg-ciudad').style.display = "none"
+        }
+    })
+    //Campo Zip Code
+    inputZip.addEventListener('blur', function(){
+        if(isNaN(inputZip.value)){
+            errors.push('Hay un error en el código postal')
+            inputZip.style.border = "solid red 1px";
+            inputZip.style.width = '80%'
+            document.getElementById('error-msg-zipCode').style.display = "block"
+        }else{
+            inputZip.style.border = "solid green 1px";
+            document.getElementById('error-msg-zipCode').style.display = "none"
+        }
+    });
+    //Campo Provincia
+    inputProvince.addEventListener('blur', function(){
+        if(!isNaN(inputProvince.value)){
+            errors.push('Hay un error en Provincia');
+            inputProvince.style.width = '80%'
+            inputProvince.style.border = "solid red 1px";
+            document.getElementById('error-msg-province').style.display = "block"
+        }else{
+            inputProvince.style.border = "solid green 1px";
+            document.getElementById('error-msg-province').style.display = "none"
+        }
+    })
+    //Campo País
+    inputCountry.addEventListener('blur', function(){
+        if(!isNaN(inputCountry.value)){
+            errors.push('Hay un error en País');
+            inputCountry.style.width = '80%'
+            inputCountry.style.border = "solid red 1px";
+            document.getElementById('error-msg-pais').style.display = "block"
+        }else{
+            inputCountry.style.border = "solid green 1px";
+            document.getElementById('error-msg-pais').style.display = "none"
+        }
+    })
+    //Campo Email
     document.getElementById('email').addEventListener('blur', function() {
         campo = event.target;    
         emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        //Se muestra un texto a modo de ejemplo, luego va a ser un icono
         if (!emailRegex.test(campo.value)) {
             errors.push('Hay un error en el email')
+            email.style.width = '80%'
             email.style.border = "solid red 1px";
-            let emailError = document.querySelector('#error-email');
-            emailError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo email';
-            emailError.style.color = 'red';
-        }else if(emailRegex.test(campo.value)) {
-            let emailError = document.querySelector('#error-email');
+            document.getElementById('error-msg-mail').style.display = "block"
+        }else{
             email.style.border = "solid green 1px";
-            emailError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Hay un error en el email' });
-            errors = errors.filter(function(i) { return i !== 'Campo de email vacío' });
-
-        }else if(email.value == null){
-            let emailError = document.querySelector('#error-email');
-            emailError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
-            emailError.style.color = 'red';
-            errors.push('Campo de email vacío')
+            document.getElementById('error-msg-mail').style.display = "none"
         }
     });
-
+    //Campo Phone
     inputPhone.addEventListener('blur', function(){
         if(isNaN(inputPhone.value)){
             errors.push('Hay un error en el teléfono')
             inputPhone.style.border = "solid red 1px";
-            let phoneError = document.querySelector('#error-phone');
-            phoneError.innerHTML  = 'Uupss! Parece que se ha producido un error en el campo de teléfono, prueba sin espacios ni otro caracter';
-            phoneError.style.color = 'red';
-        }else if(!isNaN(inputPhone.value) && inputPhone.value != null) {
+            inputPhone.style.width = '80%'
+            document.getElementById('error-msg-phone').style.display = "block"
+        }else{
             inputPhone.style.border = "solid green 1px";
-            let phoneError = document.querySelector('#error-phone');
-            phoneError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Hay un error en el teléfono' });
-            errors = errors.filter(function(i) { return i !== 'Campo de teléfono vacío' });
-
-        }else if(inputPhone.value == null){
-            let phoneError = document.querySelector('#error-phone');
-            phoneError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
-            phoneError.style.color = 'red';
-            errors.push('Campo de teléfono vacío')
+            document.getElementById('error-msg-phone').style.display = "none"
         }
     });
-
+    //Campo Contraseña
     inputPassword.addEventListener('blur', function(){
-        if(inputPassword.value.length < 8){
+        if(inputPassword.value.length < 4){
             errors.push('Hay un error en la contraseña')
             inputPassword.style.border = "solid red 1px";
-            let passwordError = document.querySelector('#error-password');
-            passwordError.innerHTML  = 'Uupss! Ten en cuenta que la contraseña debe tener un mínimo de 5 caracteres';
-            passwordError.style.color = 'red';
-        }else if(inputPassword.value.length != null) {
-            let passwordError = document.querySelector('#error-password');
+            inputPassword.style.width = '80%'
+            document.getElementById('error-msg-pass').style.display = "block"
+        }else{
             inputPassword.style.border = "solid green 1px";
-            passwordError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Hay un error en la contraseña' });
+            document.getElementById('error-msg-pass').style.display = "none"
         }
     });
-
-
+    //Campo Confirm pass
     inputPassConfirmation.addEventListener('blur', function(){
         if(inputPassword.value != inputPassConfirmation.value){
             errors.push('Las contraseñas no coinciden')
             inputPassConfirmation.style.border = "solid red 1px";
-            let passwordConfirmError = document.querySelector('#error-confirmPassword');
-            passwordConfirmError.innerHTML  = 'Uupss! Al parecer las contraseñas no coinciden, puedes revisar que escribiste apretando abajo';
-            passwordConfirmError.style.color = 'red';
-        }else if(inputPassword.value == inputPassConfirmation.value) {
-            let passwordConfirmError = document.querySelector('#error-confirmPassword');
+            inputPassConfirmation.style.width = '80%'
+            document.getElementById('error-msg-passconfirm').style.display = "block"
+        }else{
             inputPassConfirmation.style.border = "solid green 1px";
-            passwordConfirmError.innerHTML  = '';
-            errors = errors.filter(function(i) { return i !== 'Las contraseñas no coinciden' });
-            errors = errors.filter(function(i) { return i !== 'Campo de password confirmation vacío' });
-
-        }else if(inputPassConfirmation.value == null){
-            let passwordConfirmError = document.querySelector('#error-confirmPassword');
-            passwordConfirmError.innerHTML  = 'Uupss! Al parecer el campo esta vacío';
-            passwordConfirmError.style.color = 'red';
-            errors.push('Campo de password confirmation vacío')
+            document.getElementById('error-msg-passconfirm').style.display = "none"
         }
     });
-
-
+    //Envio de datos
     formulario.addEventListener('submit', function(event){
         if (errors.length > 0){
             event.preventDefault();
-            function onlyUnique(value, index, self) { 
-                return self.indexOf(value) === index;
-            }
-            let erroresFilter = errors;
-            var uniqueArrayErrors = erroresFilter.filter( onlyUnique );
-            let erroresTxt = document.querySelector('.errores-txt');
-            erroresTxt.innerHTML = 'Hemos encontrado errores en los siguientes campos:'
-            erroresTxt.style.color = 'red'
-            let ulErrores = document.querySelector('.errores ul');
-            uniqueArrayErrors.forEach(error => ulErrores.innerHTML += `<li>${error}</li>`)
-            ulErrores.style.color = 'red'
-            errors = []
+            document.getElementById('msgErrorEnd').style.display = 'block'
+        }else{
+            document.getElementById('msgErrorEnd').style.display = 'none'
         }
     })
 })

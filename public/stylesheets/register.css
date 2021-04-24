@@ -25,6 +25,10 @@
     z-index: 1;
 }
 
+.input-group-prepend{
+    width: 11%;
+}
+
 .input-group-text {
     display: flex;
     align-items: center;
@@ -69,8 +73,8 @@
     margin: 0px 15px 20px 0px;
 }
 
-.errorsSmall{
-    display: block;
-    text-align: unset;
-    font-size: 0.8rem;
+.errormsg{
+    display: none;
+    color: red;
+    margin: 10px;
 }
