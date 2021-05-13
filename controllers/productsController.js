@@ -4,91 +4,126 @@ const { title } = require('process');
 /* const ProductModel = require("../models/Products"); */
 const db = require('../database/models');
 const { includes } = require('../middlewares/validationsRegisterMiddleware');
-const Product = db.product;
+const Product = db.Product;
+const Category = db.Category;
+const Condition = db.Condition;
+
 
 /* const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
-let maxId = 0;
-products.forEach(element => {
-	if(element.id > maxId){ 
-		maxId = element.id;
-	}
-});
-maxId++;
 
 
 const productsController = {
     index : async function(req,res) {
-		let products = await Product.findAll({include:["categories","images"]}); 
+		let products = await Product.findAll( { include:["categories","conditions" ] }); 
+		
         return res.render('products/product-list',{products: products, title : "Productos", stylesheet: 'product-list.css'})
     },
     
-    create: (req,res)=>{
-        return res.render('products/crear-producto',{title: "Crear Producto", stylesheet: "crear-producto.css"});
+    create: async(req,res)=>{
+		let category= await Category.findAll();
+		let condition= await Condition.findAll();
+		
+
+        return res.render('products/crear-producto',{
+			title: "Crear Producto", 
+			stylesheet: "crear-producto.css",
+			category:category,
+			condition:condition
+		});
     },
     // Create -  Method to store
 	store: (req, res) => {
 
-		console.log(req.body);
-		console.log(req.file);
 		
-		ProductModel.createProduct(req.body,req.file);
+		//ProductModel.createProduct(req.body,req.file);
+		console.log(req.body)
 
-		return res.redirect("/productos")	
+		const price = parseInt(req.body.price);
+        const discount = parseInt(req.body.discount);
+
+        const productToStore = {
+			"name": req.body.name,
+			"price": price,
+			"discount": discount,
+			"category_id":req.body.category_id,
+			"description":req.body.description,
+			"condition_id":req.body.condition_id,
+			"image_main": req.file.filename,
+		}
+
+        
+        Product.create(productToStore);
+
+		return res.redirect("/productos")
 	},
-    
-	edit: (req, res) => {
+	detail : async(req, res) => {
+
+		try {
+			const product = await Product.findByPk(req.params.id);
+			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
+
+		} catch (error) {
+
+			res.send(error);
+			
+		}
+			
+    },    
+	edit: async(req, res) => {
 		
-		let product=ProductModel.findByPk(req.params.id);
+		let product= await Product.findByPk(req.params.id);
+		let category= await Category.findAll();
+		let condition= await Condition.findAll();
 	
-
-		return res.render("products/edit-product", {product: product, title: "Editar producto", stylesheet: "edit-product.css"})
+		return res.render("products/edit-product", {
+			product: product, 
+			title: "Editar producto", 
+			stylesheet: "edit-product.css",
+			category:category,
+			condition:condition
+		})
 	},
-    update: (req, res) => { 
+    update: async(req, res) => { 
+		console.log(req.body)
 
-		console.log(req.body);
-		
-		let productToEdit=ProductModel.findByPk(req.params.id);
+		await Product.update(req.body,
+		{
+			where: {id: req.params.id}
+		})
 
-		console.log(req.file)
+ 		// let newArray = products.map(product=>{
 
- 		let newArray = products.map(product=>{
+		// 	 if(product.id==productToEdit.id){
+		// 		product.name =req.body.name;
+		// 		product.price =req.body.price;
+		// 		product.discount =req.body.discount;
+		// 		product.category =req.body.category;
+		// 		product.description =req.body.description;
+		// 		product.image = req.file.originalname;
+		// 	 }
+		// 	 return product;
+		//  })
 
-			 if(product.id==productToEdit.id){
-				product.name =req.body.name;
-				product.price =req.body.price;
-				product.discount =req.body.discount;
-				product.category =req.body.category;
-				product.description =req.body.description;
-				product.image = req.file.originalname;
-			 }
-			 return product;
-		 })
-
-		 let productJson = JSON.stringify(newArray, null, 2);
-		 fs.writeFileSync('./data/productsDataBase.json', productJson);
+		//  let productJson = JSON.stringify(newArray, null, 2);
+		//  fs.writeFileSync('./data/productsDataBase.json', productJson);
 		 		
 
 		res.redirect("/");
 	},
-	detail : (req, res) => {
+	
+	delete: async(req,res) => {
 
-		console.log(req.params.id);
-		const product = ProductModel.findByPk(req.params.id);
-		console.log(product);
-		
-		if (product) {
-			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
-		}else{
-			return res.send("error");
+		try {
+			await Product.destroy({
+				where:{id:req.params.id}
+			})
+			return res.redirect('/');
+			
+		} catch (error) {
+			res.send(error);
 		}
-		
-    },
-	delete: (req,res) => {
-		ProductModel.delete(req.params.id)
-
-		return res.redirect('/');
 	}
 }
 

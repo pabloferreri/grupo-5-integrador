@@ -17,7 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "product_id"
       })
       Product.belongsTo(models.Category,{
+        as: "categories",
         foreignKey: "category_id"
+      })
+      Product.belongsTo(models.Condition,{
+        as: "conditions",
+        foreignKey: "condition_id"
       })
     }
   };
@@ -28,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     stock: DataTypes.INTEGER,
     category_id: DataTypes.INTEGER,
     description: DataTypes.TEXT,
+    condition_id:DataTypes.INTEGER,
     image_main: DataTypes.STRING
   }, {
     sequelize,

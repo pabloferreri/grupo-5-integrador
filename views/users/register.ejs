@@ -56,11 +56,9 @@
 		            <div class="input-group-prepend">
 		                <span class="input-group-text"> <i class="fa fa-user "></i></span>
 		            </div>
-                    <input  class="form-control <%= locals.errors && errors.address? 'is-invalid':null %>" placeholder="Dirección" type="text" id="address" name="address"  value="<%= locals.oldData? oldData.address : null%>">
-                    <small id="error-address" class="errorsSmall"></small>
+                    <input  class="form-control <%= locals.errors && errors.street? 'is-invalid':null %>" placeholder="Calle" type="text" id="street" name="street"  value="<%= locals.oldData? oldData.street : null%>">
+                    <small id="error-street" class="errorsSmall"></small>
                 </div> 
-
-
 
                 <div class="form-group input-group">
 		            <div class="input-group-prepend">

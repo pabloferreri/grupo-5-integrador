@@ -25,7 +25,7 @@ module.exports = {
         onDelete:"CASCADE",
         references:{
           model:{
-            tableName: "Addresses",
+            tableName: "Cities",
           },
           key:"id"
         }
@@ -39,7 +39,7 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      avartar: {
+      avatar: {
         type: Sequelize.STRING
       },
       isAdmin: {

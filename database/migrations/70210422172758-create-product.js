@@ -33,6 +33,16 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      condition_id:{
+        type: Sequelize.INTEGER,
+        onDelete:"CASCADE",
+        references:{
+          model:{
+            tableName: "Conditions",
+          },
+          key:"id"
+        }
+      },
       image_main: {
         type: Sequelize.STRING
       },

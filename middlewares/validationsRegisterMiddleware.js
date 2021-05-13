@@ -6,7 +6,7 @@ const validations = [
         .notEmpty().withMessage("Ingrese su nombre"),
     body("lastname")
         .notEmpty().withMessage("Ingrese su apellido"),
-    body("address")
+    body("street")
         .notEmpty().withMessage("Ingrese la calle de su domicilio"),
     body("number")
         .notEmpty().withMessage("Ingrese el numero de su domicilio"),

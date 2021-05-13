@@ -1,4 +1,4 @@
-const fs = require('fs');
+/* const fs = require('fs');
 const { parse } = require('path');
 const path = require('path');
 
@@ -61,4 +61,4 @@ const product = {
     }
 }
 
-module.exports = product;
+module.exports = product; */

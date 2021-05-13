@@ -29,7 +29,7 @@ const User = {
 
     createUser: function (data,file) {
 
-        const passwordPlainText = data.password;
+        /* const passwordPlainText = data.password;
         const passwordHash = bcryptjs.hashSync(passwordPlainText, 10);
 
         const userToSave = {
@@ -53,7 +53,7 @@ const User = {
         let userJson=JSON.stringify(users,null,2);
         fs.writeFileSync("./data/usersDataBase.json",userJson);
         return userToSave;
-        
+         */
     },
 
     delete: (id)=>{

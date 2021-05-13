@@ -10,16 +10,20 @@ const {validationResult} = require("express-validator")
 const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
-const UserModel = require('../models/User');
+/* const UserModel = require('../models/User'); */
 const { userInfo } = require('os');
+const db = require('../database/models');
+const User = db.User;
 
 
 const usersController = {
     
-    register:(req,res)=>{
+    register: (req,res)=>{
         return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
     },
-    registrationProcess: (req,res)=>{
+    registrationProcess: async(req,res)=>{
+
+        
         
         const resultValidation = validationResult(req)
 
@@ -31,11 +35,37 @@ const usersController = {
                 oldData: req.body
             })
         }
+
+
+        let createdUser = await User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+
+        if(createdUser){
+            return res.render('users/register', {title : "Registrarse", 
+            stylesheet: "register.css",
+            errors: {
+                email: {
+                    msg: 'Este mail ya esta registrado.'
+                }
+            }, 
+            oldData: req.body}); 
+        }
         
 
         if(req.body.password === req.body.passwordConfirmation){    
-        
-            UserModel.createUser(req.body,req.file)
+
+            const passwordPlainText = req.body.password;
+            const passwordHash = bcryptjs.hashSync(passwordPlainText, 10);
+            
+            let user = {
+                ...req.body,
+                "password": passwordHash,
+                "avatar": req.file.filename
+            }
+            await User.create(user);
             return res.redirect("/productos");
 
         }else{

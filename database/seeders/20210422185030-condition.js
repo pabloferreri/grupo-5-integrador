@@ -1,22 +1,23 @@
 'use strict';
 
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     
-   await queryInterface.bulkInsert('Categories', 
+   await queryInterface.bulkInsert('Conditions', 
    [
     {
-      category: 'Mouses',
+      condition_name: 'visited',
       createdAt: new Date,
       updatedAt:new Date
     },
     {
-      category: 'Auriculares',
+      condition_name: 'in-sale',
       createdAt: new Date,
       updatedAt:new Date
     },
     {
-      category: 'Gabinetes',
+      condition_name: 'available',
       createdAt: new Date,
       updatedAt:new Date
     },   
@@ -25,6 +26,6 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkDelete('Categories', null, {});
+    await queryInterface.bulkDelete('Conditions', null, {});
   }
-};
+}

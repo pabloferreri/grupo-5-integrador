@@ -36,9 +36,22 @@
                   <label for="category">Categoria</label>
                 </div>
                 <div class="col-75">
-                  <select id="category" name="category">
-                    <option value="visited">visitados</option>
-                    <option value="In-sale">En oferta</option>
+                  <select id="category" name="category_id">
+                    <% category.forEach(categories => { %>
+                      <option value="<%=categories.id%>"> <%= categories.category%> </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="condition">Condición</label>
+                </div>
+                <div class="col-75">
+                  <select id="condition" name="condition_id">
+                    <% condition.forEach(conditions => { %>
+                      <option value="<%= conditions.id%>"  > <%= conditions.condition_name%> </option>
+                    <% }) %>
                   </select>
                 </div>
               </div>

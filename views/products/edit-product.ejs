@@ -33,18 +33,31 @@
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="Categoria">Categoria</label>
+                  <label for="category">Categoria</label>
                 </div>
                 <div class="col-75">
-                  <select id="Categoria" name="category">
-                    <option value="visited" <%= product.category == "visited"? "selected": null %>>visited</option>
-                    <option value="In-sale" <%= product.category == "in-sale"? "selected": null %>>In-sale</option>
+                  <select id="category" name="category_id">
+                    <% category.forEach(categories => { %>
+                      <option value="<%= categories.id%>" <%= (categories.id == product.category_id)? "selected" : null  %> > <%= categories.category%> </option>
+                    <% }) %>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-25">
-                  <label for="Descripcion">Descripcion del producto</label>
+                  <label for="category">Condición</label>
+                </div>
+                <div class="col-75">
+                  <select id="condition" name="condition_id">
+                    <% condition.forEach(conditions => { %>
+                      <option value="<%= conditions.id%>" <%= (conditions.id == product.condition_id)? "selected" : null  %> > <%= conditions.condition_name%> </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="Descripcion">Image del producto</label>
                 </div>
                 <div class="col-75">
                     <input type="file" id="file" name="image">

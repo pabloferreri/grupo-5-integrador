@@ -3,7 +3,7 @@ window.addEventListener('load', function(){
     let formulario = document.querySelector('#formRegister')
     let inputName = document.querySelector('#name');
     let inputApellido = document.querySelector('#lastname');
-    let inputAddress = document.querySelector('#address');
+    let inputAddress = document.querySelector('#street');
     let inputNumber = document.querySelector('#number');
     let inputCity = document.querySelector('#city');
     let inputZipCode = document.querySelector('#zipCode');
