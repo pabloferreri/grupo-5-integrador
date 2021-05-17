@@ -62,22 +62,17 @@
                     </div>
                     <input  class="form-control <%= locals.errors && errors.number? 'is-invalid':null %>" placeholder="Número" type="number" id="number" name="number"  min="1" value="<%= locals.oldData? oldData.number : null%>">
                     <p class="errormsg" id="error-msg-direccionNumber"><small>Introduce el número de tu Dirección</small></p>
-                </div> 
-<!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></span>
-                    </div>
-                    <input  class="form-control <%= locals.errors && errors.city? 'is-invalid':null %>" placeholder="Ciudad" type="text" id="city" name="city"  value="<%= locals.oldData? oldData.city : null%>">
-                    <p class="errormsg" id="error-msg-ciudad"><small>Introduce tu ciudad</small></p>
-                </div> 
+                </div>                
 <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fas fa-envelope"></i></span>
                     </div>
-                    <input  class="form-control <%= locals.errors && errors.zipCode? 'is-invalid':null %>" placeholder="Código postal" type="text" id="zipCode" name="zipCode"  value="<%= locals.oldData? oldData.zipCode : null%>">
-                    <p class="errormsg" id="error-msg-zipCode"><small>Introduce tu código postal</small></p>
+                    <select name="" id="">
+                        <% city.forEach(cities => { %>
+                            <option value="<%= cities.id%>"> <%= cities.city%> </option>
+                          <% }) %>
+                    </select>
                 </div>
 <!-- form-group// -->
                 <div class="form-group input-group">

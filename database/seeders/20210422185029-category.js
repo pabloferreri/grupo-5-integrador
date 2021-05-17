@@ -20,6 +20,11 @@ module.exports = {
       createdAt: new Date,
       updatedAt:new Date
     },   
+    {
+      category: 'Teclados',
+      createdAt: new Date,
+      updatedAt:new Date
+    },   
   ], {});
   },
 

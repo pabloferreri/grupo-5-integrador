@@ -7,19 +7,21 @@ const session = require('express-session');
 const {validationResult} = require("express-validator")
 
 
-const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+// const userFilePath = path.resolve(__dirname, '../data/usersDataBase.json');
+// const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
 /* const UserModel = require('../models/User'); */
 const { userInfo } = require('os');
 const db = require('../database/models');
 const User = db.User;
+const City = db.City;
 
 
 const usersController = {
     
-    register: (req,res)=>{
-        return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
+    register: async (req,res)=>{
+        let city = await City.findAll();
+        return res.render('users/register', {title : "Registrarse", stylesheet: "register.css",city: city});
     },
     registrationProcess: async(req,res)=>{
 
