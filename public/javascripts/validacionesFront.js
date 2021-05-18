@@ -3,10 +3,10 @@ window.addEventListener('load', function(){
     let formulario = document.querySelector('#formRegister')
     let inputName = document.querySelector('#name');
     let inputApellido = document.querySelector('#lastname');
-    let inputAddress = document.querySelector('#street');
-    let inputNumber = document.querySelector('#number');
-    let inputCity = document.querySelector('#city');
-    let inputZipCode = document.querySelector('#zipCode');
+    let inputDireccion = document.querySelector('#street');
+    let inputDireccionNumber = document.querySelector('#number');
+    let inputCiudad = document.querySelector('#city');
+    /* let inputZip = document.querySelector('#zipCode'); */
     let inputProvince = document.querySelector('#province');
     let inputCountry = document.querySelector('#country');
     let inputPhone = document.querySelector('#phone');
@@ -46,10 +46,10 @@ window.addEventListener('load', function(){
             errors.push('Hay un error en la dirección');
             inputDireccion.style.width = '80%'
             inputDireccion.style.border = "solid red 1px";
-            document.getElementById('error-msg-direccion').style.display = "block"
-        }else{
+/*             document.getElementById('error-msg-direccion').style.display = "block"
+ */        }else{
             inputDireccion.style.border = "solid green 1px";
-            document.getElementById('error-msg-direccion').style.display = "none"
+            /* document.getElementById('error-msg-direccion').style.display = "none" */
         }
     })
     //Campo Número Dirección
@@ -69,10 +69,10 @@ window.addEventListener('load', function(){
             document.getElementById('error-msg-ciudad').style.display = "block"
         }else{
             inputCiudad.style.border = "solid green 1px";
-            document.getElementById('error-msg-ciudad').style.display = "none"
+            /* document.getElementById('error-msg-ciudad').style.display = "none" */
         }
     })
-    //Campo Zip Code
+   /*  //Campo Zip Code
     inputZip.addEventListener('blur', function(){
         if(isNaN(inputZip.value)){
             errors.push('Hay un error en el código postal')
@@ -83,7 +83,7 @@ window.addEventListener('load', function(){
             inputZip.style.border = "solid green 1px";
             document.getElementById('error-msg-zipCode').style.display = "none"
         }
-    });
+    }); */
     //Campo Provincia
     inputProvince.addEventListener('blur', function(){
         if(!isNaN(inputProvince.value)){

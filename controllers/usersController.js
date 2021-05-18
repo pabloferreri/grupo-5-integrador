@@ -25,8 +25,8 @@ const usersController = {
     },
     registrationProcess: async(req,res)=>{
 
-        
-        
+        let city = await City.findAll();
+
         const resultValidation = validationResult(req)
 
         if (resultValidation.errors.length > 0) {
@@ -34,7 +34,8 @@ const usersController = {
                 title : "Registrarse", 
                 stylesheet: "register.css",
                 errors: resultValidation.mapped(), 
-                oldData: req.body
+                oldData: req.body,
+                city: city
             })
         }
 
@@ -53,7 +54,9 @@ const usersController = {
                     msg: 'Este mail ya esta registrado.'
                 }
             }, 
-            oldData: req.body}); 
+            oldData: req.body,
+            city: city
+            }); 
         }
         
 
@@ -79,7 +82,9 @@ const usersController = {
                     msg: 'Las contaseñas ingresadas no coinciden.'
                 }
             }, 
-            oldData: req.body}); 
+            oldData: req.body,
+            city: city
+            }); 
         }     
     },
     login:(req,res)=>{

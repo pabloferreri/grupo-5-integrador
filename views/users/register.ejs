@@ -68,11 +68,14 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fas fa-envelope"></i></span>
                     </div>
-                    <select name="" id="">
-                        <% city.forEach(cities => { %>
+                    <input  class="form-control <%= locals.errors && errors.city? 'is-invalid':null %>" placeholder="Ciudad" type="text" id="city" name="city"  value="<%= locals.oldData? oldData.city : null%>">
+                    <p class="errormsg" id="error-msg-province"><small>Introduce tu Ciudad</small></p>
+                    
+                   <!--  <select name="city" id="city">
+                         <% city.forEach(cities => { %>
                             <option value="<%= cities.id%>"> <%= cities.city%> </option>
                           <% }) %>
-                    </select>
+                    </select> -->
                 </div>
 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -143,7 +146,7 @@
                     <p class="errormsg" id="error-msg-passconfirm"><small>Las contraseñas no coinciden</small></p>
                 </div> 
                 <input type="checkbox" id="ver" name="ver" onChange="verPassword()">Ver contraseña
-                <script src="/js/JsFrontPassword.js"></script>
+                <script src="/javascripts/JsFrontPassword.js"></script>
 <!-- form-group// -->
                 <% if (locals.errors && errors.avatar) { %>
                     <div class="text-danger">
@@ -159,7 +162,7 @@
 
 
                 <div class="errormsg" id="msgErrorEnd">Comprueba que todos los campos esten correctos</div>
-                <script src="/js/validacionesFront.js"></script>
+                <script src="/javascripts/validacionesFront.js"></script>
                                      
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block" value="Enviar"> Crear Cuenta  </button>
