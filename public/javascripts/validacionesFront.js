@@ -14,6 +14,8 @@ window.addEventListener('load', function(){
     let inputPassConfirmation = document.querySelector('#passwordConfirmation');
     let errors = [];
 
+    
+
 //Validaciones:
 
     //Campo Name
@@ -46,20 +48,31 @@ window.addEventListener('load', function(){
             errors.push('Hay un error en la dirección');
             inputDireccion.style.width = '80%'
             inputDireccion.style.border = "solid red 1px";
-/*             document.getElementById('error-msg-direccion').style.display = "block"
- */        }else{
+            document.getElementById('error-msg-direccion').style.display = "block"
+        }else{
             inputDireccion.style.border = "solid green 1px";
-            /* document.getElementById('error-msg-direccion').style.display = "none" */
+            document.getElementById('error-msg-direccion').style.display = "none"
         }
     })
     //Campo Número Dirección
-    inputDireccionNumber.onkeydown = function(e) {
+    /* inputDireccionNumber.onkeydown = function(e) {
         if(!((e.keyCode > 95 && e.keyCode < 106)
           || (e.keyCode > 47 && e.keyCode < 58) 
           || e.keyCode == 8)) {
             return false;
         }
-    }
+    } */
+    inputDireccionNumber.addEventListener('blur', function(){
+        if(isNaN(inputDireccionNumber.value)){
+            errors.push('Hay un error en el numero dirección');
+            inputDireccionNumber.style.width = '80%'
+            inputDireccionNumber.style.border = "solid red 1px";
+            document.getElementById('error-msg-direccionNumber').style.display = "block"
+        }else{
+            inputDireccionNumber.style.border = "solid green 1px";
+            document.getElementById('error-msg-direccionNumber').style.display = "none"
+        }
+    })    
     //Campo Ciudad
     inputCiudad.addEventListener('blur', function(){
         if(!isNaN(inputCiudad.value)){
@@ -69,7 +82,7 @@ window.addEventListener('load', function(){
             document.getElementById('error-msg-ciudad').style.display = "block"
         }else{
             inputCiudad.style.border = "solid green 1px";
-            /* document.getElementById('error-msg-ciudad').style.display = "none" */
+            document.getElementById('error-msg-ciudad').style.display = "none"
         }
     })
    /*  //Campo Zip Code
