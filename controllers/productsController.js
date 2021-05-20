@@ -42,11 +42,13 @@ const productsController = {
 
 		const price = parseInt(req.body.price);
         const discount = parseInt(req.body.discount);
+		const stock = parseInt(req.body.stock);
 
         const productToStore = {
 			"name": req.body.name,
 			"price": price,
 			"discount": discount,
+			"stock": stock,
 			"category_id":req.body.category_id,
 			"description":req.body.description,
 			"condition_id":req.body.condition_id,

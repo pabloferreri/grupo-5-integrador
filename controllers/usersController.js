@@ -14,7 +14,7 @@ const {validationResult} = require("express-validator")
 const { userInfo } = require('os');
 const db = require('../database/models');
 const User = db.User;
-const City = db.City;
+
 
 
 const usersController = {
@@ -85,7 +85,7 @@ const usersController = {
     login:(req,res)=>{
         return res.render('users/login', {title : "Iniciar Sesión",stylesheet : "login.css"});
     },
-    loginProcess: (req,res)=>{
+    loginProcess: async(req,res)=>{
         const resultValidation = validationResult(req)
 
         if (resultValidation.errors.length > 0) {
@@ -97,7 +97,13 @@ const usersController = {
             })
         }else{
 
-            let userFoundDb = UserModel.findByField("email",req.body.email)
+            
+
+            let userFoundDb = await User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
            
 
             if (userFoundDb) {
@@ -140,6 +146,7 @@ const usersController = {
         }
     },
     profile: (req,res)=>{
+     
         return res.render('users/profile', { 
             title : "Perfil", 
             stylesheet: "profile.css",
@@ -156,6 +163,7 @@ const usersController = {
         
     },
     logout:(req,res)=>{
+        
         req.session.destroy();
         return res.redirect('/');
     }

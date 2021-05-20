@@ -9,10 +9,30 @@ module.exports = {
       price: 95000,
       discount: 15,
       stock: 10,
-      category_id: 2, 
+      category_id: 3, 
       description: "Gabinete Gamer Xigmatek Eros Rgb Atx Vidrio Templado.",
       condition_id: 2,
-      image_main: "gabinete.jpg"
+      image_main: "gabinete2.jpg"
+     },
+     {
+      name: "Gabinete Gamer",
+      price: 105000,
+      discount: 30,
+      stock: 5,
+      category_id: 3, 
+      description: "Gabinete Gamer Xigmatek Eros Rgb Atx Vidrio Templado.",
+      condition_id: 2,
+      image_main: "gabinete3.jpg"
+     },
+     {
+      name: "Gabinete Gamer",
+      price: 80000,
+      discount: 20,
+      stock: 40,
+      category_id: 1, 
+      description: "Gabinete Gamer Xigmatek Eros Rgb Atx Vidrio Templado.",
+      condition_id: 1,
+      image_main: "gabinete4.jpg"
      },
      {
       name: "Teclado Gamer",
@@ -31,7 +51,7 @@ module.exports = {
       stock: 50,
       category_id: 2, 
       description: "Mouse de juego Genius GX Gaming Scorpion Spear Pro negro.",
-      condition_id: 3,
+      condition_id: 2,
       image_main: "mouseGamer.jpg"
      },
      {
