@@ -64,7 +64,9 @@ const productsController = {
 
 		try {
 			const product = await Product.findByPk(req.params.id);
-			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css'})
+			product.condition_id = 1;
+			await product.save();
+			return res.render('products/detail',{product: product, title : "Detalle del producto", stylesheet: 'detail.css',user: req.session.userLogged})
 
 		} catch (error) {
 

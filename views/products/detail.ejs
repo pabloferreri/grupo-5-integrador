@@ -34,7 +34,11 @@
                 <p class="p-1">Paga en <%= product.fees%> cuotas sin interes</p>
                 <p class="p-1">Retiro gratis en los locales del vendedor</p>
 
-                <div class="p-1 ">      
+                <% if (user) { %>
+                 
+               
+                <div class="p-1 ">  
+                        
                     <a href="/productos/<%= product.id%>/edit"><button href="/" class="btn btn-primary w-100 p-2">Editar producto</button></a>
                 </div>
                 <div class="p-1 ">
@@ -42,7 +46,7 @@
                         <button class="btn btn-primary w-100 p-2">Borrar producto</button>
                     </form>
                 </div>
-
+                <% } %>
                 <div class="p-1 ">
                     <button class="btn btn-primary w-100 p-2">Comprar ahora</button>
                 </div>
