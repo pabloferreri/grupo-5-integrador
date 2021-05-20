@@ -6,7 +6,6 @@ window.addEventListener('load', function(){
     let inputDireccion = document.querySelector('#street');
     let inputDireccionNumber = document.querySelector('#number');
     let inputCiudad = document.querySelector('#city');
-    /* let inputZip = document.querySelector('#zipCode'); */
     let inputProvince = document.querySelector('#province');
     let inputCountry = document.querySelector('#country');
     let inputPhone = document.querySelector('#phone');
@@ -173,9 +172,11 @@ window.addEventListener('load', function(){
     });
     //Envio de datos
     formulario.addEventListener('submit', function(event){
+        console.log(errors)
         if (errors.length > 0){
             event.preventDefault();
             document.getElementById('msgErrorEnd').style.display = 'block'
+            errors = [];
         }else{
             document.getElementById('msgErrorEnd').style.display = 'none'
         }

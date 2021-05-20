@@ -12,8 +12,6 @@ const validations = [
         .notEmpty().withMessage("Ingrese el numero de su domicilio"),
     body("city")
         .notEmpty().withMessage("Ingrese la ciudad donde vive"),
-    body("zipCode")
-        .notEmpty().withMessage("Ingrese el codigo postal de su domicilio"),
     body("province")
         .notEmpty().withMessage("Ingrese la provincia donde vive"),
     body("country")

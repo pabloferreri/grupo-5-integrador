@@ -20,22 +20,19 @@ const City = db.City;
 const usersController = {
     
     register: async (req,res)=>{
-        let city = await City.findAll();
-        return res.render('users/register', {title : "Registrarse", stylesheet: "register.css",city: city});
+        return res.render('users/register', {title : "Registrarse", stylesheet: "register.css"});
     },
     registrationProcess: async(req,res)=>{
 
-        let city = await City.findAll();
 
         const resultValidation = validationResult(req)
-
+        
         if (resultValidation.errors.length > 0) {
             return res.render('users/register', { 
                 title : "Registrarse", 
                 stylesheet: "register.css",
                 errors: resultValidation.mapped(), 
                 oldData: req.body,
-                city: city
             })
         }
 
@@ -55,7 +52,6 @@ const usersController = {
                 }
             }, 
             oldData: req.body,
-            city: city
             }); 
         }
         
@@ -83,7 +79,6 @@ const usersController = {
                 }
             }, 
             oldData: req.body,
-            city: city
             }); 
         }     
     },
